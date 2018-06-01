@@ -1,0 +1,9 @@
+
+@font-face {font-family: "Geometric 706";
+    src: url('../fonts/9211.eot');
+    src: url('../fonts/9211.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/9211.svg#9211') format('svg'),
+    url('../fonts/9211.ttf') format('truetype'),
+    url('../fonts/9211.woff') format('woff'),
+    url('../fonts/9211.woff2') format('woff2');
+}
