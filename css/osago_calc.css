@@ -55,8 +55,98 @@
   background-color: #F15A0B;
 }
 
+.calc_popup_bg .calc_container h1 {
+  font-family: "Geometric 706";
+  font-size: 48px;
+  line-height: 57px;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0 36px 0;
+  margin: 0;
+}
+
 .calc_popup_bg .calc_container form.osago_calc {
   display: block;
+  margin: 0 30px 0 30px;
+  padding: 0;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .osago_nav_vision {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .osago_nav_vision .osago_nav_vision_item {
+  position: relative;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  background-color: #F15A0B;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: #fff;
+  font-family: "Geometric 706";
+  font-style: bold;
+  text-align: center;
+  font-size: 43px;
+  line-height: 64px;
+  z-index: 10;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .osago_nav_vision .osago_nav_vision_item.active {
+  width: 150px;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .osago_nav_vision .nav_position_1.active ~ .osago_nav_vision_slider {
+  left: 0;
+  right: auto;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .osago_nav_vision .nav_position_2.active ~ .osago_nav_vision_slider {
+  left: calc(20% - 30px);
+  right: auto;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .osago_nav_vision .nav_position_3.active ~ .osago_nav_vision_slider {
+  left: calc(40% - 30px);
+  right: auto;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .osago_nav_vision .nav_position_4.active ~ .osago_nav_vision_slider {
+  left: calc(60% - 30px);
+  right: auto;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .osago_nav_vision .nav_position_5.active ~ .osago_nav_vision_slider {
+  left: auto;
+  right: 0;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .osago_nav_vision .osago_nav_vision_slider {
+  position: absolute;
+  left: 0;
+  top: -15px;
+  display: block;
+  width: 230px;
+  height: 80px;
+  background-color: #F15A0B;
+  background-image: url("/images/auto-stic.png");
+  background-size: contain;
+  z-index: 11;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .nav_vision_line {
+  position: relative;
+  display: block;
+  left: 0;
+  top: -30px;
+  width: 100%;
+  height: 1px;
+  border-bottom: 2px dashed #fff;
 }
 
 .calc_popup_bg .calc_container form.kasko_calc {
