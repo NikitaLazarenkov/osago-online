@@ -15,23 +15,55 @@
             <div id="osago_open" class="calc_nav_button active">Осаго</div>
             <div id="kasko_open" class="calc_nav_button">Каско</div>
         </nav>
-        <div class="calc_container">
+        <section class="calc_container">
             <form id="osago_calc" class="osago_calc">
                 <h1>Калькулятор ОСАГО</h1>
-                <div class="osago_nav_vision">
-                    <div class="osago_nav_vision_item nav_position_1 active">1</div>
-                    <div class="osago_nav_vision_item nav_position_2">2</div>
-                    <div class="osago_nav_vision_item nav_position_3">3</div>
-                    <div class="osago_nav_vision_item nav_position_4">4</div>
-                    <div class="osago_nav_vision_item nav_position_5">5</div>
+                <nav class="osago_nav_vision">
+                    <div id="nav_position_1" class="osago_nav_vision_item active">1</div>
+                    <div id="nav_position_2" class="osago_nav_vision_item">2</div>
+                    <div id="nav_position_3" class="osago_nav_vision_item">3</div>
+                    <div id="nav_position_4" class="osago_nav_vision_item">4</div>
+                    <div id="nav_position_5" class="osago_nav_vision_item">5</div>
                     <div class="osago_nav_vision_slider"></div>
-                </div>
+                </nav>
                 <div class="nav_vision_line"></div>
+                <div class="calc_content">
+                    <div class="content_slide"></div>
+                    <div class="content_slide"></div>
+                    <div class="content_slide"></div>
+                    <div class="content_slide"></div>
+                    <div class="content_slide"></div>
+                </div>
+                <nav id="osago_step_1_nav" class="osago_bottom_nav">
+                    <div></div>
+                    <button type="button" id="step1_go1" class="calc_center_button">Поехали</button>
+                    <button type="button" id="step1_go2" class="calc_right_arrow">></button>
+                </nav>
+                <nav id="osago_step_2_nav" class="osago_bottom_nav">
+                    <button type="button" id="step2_back" class="calc_left_arrow"><</button>
+                    <button type="button" id="step2_go1" class="calc_center_button">Оформить полис</button>
+                    <button type="button" id="step2_go2" class="calc_right_arrow">></button>
+                </nav>
+                <nav id="osago_step_3_nav" class="osago_bottom_nav">
+                    <button type="button" id="step3_back" class="calc_left_arrow"><</button>
+                    <button type="button" id="step3_go1" class="calc_center_button">Далее</button>
+                    <button type="button" id="step3_go1" class="calc_right_arrow">></button>
+                </nav>
+                <nav id="osago_step_4_nav" class="osago_bottom_nav">
+                    <button type="button" id="step4_back" class="calc_left_arrow"><</button>
+                    <button type="button" id="step4_go1" class="calc_center_button">Далее</button>
+                    <button type="button" id="step4_go1" class="calc_right_arrow">></button>
+                </nav>
+                <nav id="osago_step_5_nav" class="osago_bottom_nav">
+                    <button type="button" id="step5_back" class="calc_left_arrow"><</button>
+                    <button id="step5_go1" type="submit" class="calc_center_button">Отправить заявку</button>
+                    <div></div>
+                </nav>
             </form>
             <form id="kasko_calc" class="kasko_calc">
                 <h1>Калькулятор КАСКО в разработке</h1>
             </form>
-        </div>
+        </section>
     </div>
     <script src="/js/osago_calc.js"></script>
 </body>
