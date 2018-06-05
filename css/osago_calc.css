@@ -35,7 +35,7 @@
   text-transform: uppercase;
   color: #fff;
   font-style: normal;
-  font-size: 32px;
+  font-size: 28px;
   line-height: 55px;
   text-align: center;
 }
@@ -50,15 +50,19 @@
   position: relative;
   margin: 0 auto 80px auto;
   width: 883px;
-  height: 827px;
+  height: 770px;
   border-radius: 15px;
   background-color: #F15A0B;
+  background-image: url("/images/price_back.png");
+  background-size: 2600px;
+  background-repeat: no-repeat;
+  background-position: bottom center;
 }
 
 .calc_popup_bg .calc_container h1 {
   font-family: "Geometric 706";
-  font-size: 48px;
-  line-height: 57px;
+  font-size: 38px;
+  line-height: 50px;
   color: #fff;
   text-align: center;
   padding: 20px 0 36px 0;
@@ -66,9 +70,33 @@
 }
 
 .calc_popup_bg .calc_container form.osago_calc {
+  position: relative;
   display: block;
   margin: 0 30px 0 30px;
   padding: 0;
+  overflow: hidden;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_close_button {
+  position: absolute;
+  right: 5px;
+  top: 15px;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  background-image: url("/images/close.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  border-radius: none;
+  transition: 0.7s;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_close_button:hover {
+  background-image: url("/images/close_bl.svg");
+  transform: rotate(180deg);
 }
 
 .calc_popup_bg .calc_container form.osago_calc .osago_nav_vision {
@@ -139,6 +167,7 @@
   width: 230px;
   height: 80px;
   background-color: #F15A0B;
+  border-radius: 15px;
   background-image: url("/images/auto-stic.png");
   background-size: contain;
   z-index: 11;
@@ -156,11 +185,367 @@
 
 .calc_popup_bg .calc_container form.osago_calc .calc_content {
   position: relative;
-  width: 100%;
-  height: 300px;
+  width: 823px;
+  height: 450px;
   padding: 0;
-  margin: 20px 0 20px 0;
+  overflow: hidden;
+  margin: 20px 0 35px 0;
+  background-color: transparent;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: calc(843px * 5);
+  transition: 1s;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide {
+  width: 823px;
+  padding: 0px;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide h2 {
+  color: #fff;
+  font-family: "Geometric 706";
+  font-style: normal;
+  font-weight: 700;
+  text-align: center;
+  font-size: 28px;
+  line-height: 32px;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide p {
+  color: #fff;
+  font-family: "Geometric 706";
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  font-size: 20px;
+  line-height: 22px;
+  margin: 0;
+  margin-bottom: 18px;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide p span {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .input_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .input_container label {
+  color: #fff;
+  font-family: "Geometric 706";
+  font-style: normal;
+  font-weight: 700;
+  text-align: left;
+  font-size: 20px;
+  line-height: 36px;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .input_container select {
+  height: 36px;
+  font-size: 20px;
+  line-height: 36px;
+  margin-bottom: 12px;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .input_container input[type="text"] {
+  height: 36px;
+  font-size: 20px;
+  line-height: 36px;
+  margin-bottom: 12px;
+  border-radius: 5px;
+  border: none;
+  padding: 0 20px;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .double_input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .double_input .input_container {
+  display: flex;
+  flex-direction: column;
+  width: 47%;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .double_input .input_container label {
+  color: #fff;
+  font-family: "Geometric 706";
+  font-style: normal;
+  font-weight: 700;
+  text-align: left;
+  font-size: 20px;
+  line-height: 36px;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .double_input .input_container input {
+  height: 36px;
+  font-size: 20px;
+  line-height: 36px;
+  margin-bottom: 12px;
+  border-radius: 5px;
+  border: none;
+  padding: 0 20px;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .radio_container {
+  margin-bottom: 12px;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .radio_container label {
+  color: #fff;
+  font-family: "Geometric 706";
+  font-style: normal;
+  font-weight: 700;
+  text-align: left;
+  font-size: 20px;
+  line-height: 36px;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .radio_container .radioblock {
+  display: flex;
+  flex-direction: row;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .radio_container .radioblock .radio {
+  width: 50%;
+  display: block;
+  height: 25px;
+  padding-left: 35px;
+  background-image: url("/images/radio.svg");
+  background-size: contain;
+  background-position: left center;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-family: "Geometric 706";
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  font-size: 20px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .radio_container .radioblock .radio.active {
+  background-image: url("/images/radio_active.svg");
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .check_container .checkboxes {
+  margin-top: 18px;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .check_container .checkboxes .check input[type=checkbox] {
+  position: absolute;
+  left: -10000px;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .check_container .checkboxes .check {
+  background-image: url("/images/check.svg");
+  background-size: 30px 30px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 45px;
+  cursor: pointer;
+  position: relative;
+  color: #fff;
+  font-family: "Geometric 706";
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  font-size: 20px;
+  line-height: 22px;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .check_container .checkboxes .check.active {
+  background-image: url("/images/check_active.svg");
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .upload_container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .upload_container .upload_title {
+  color: #fff;
+  font-family: "Geometric 706";
+  font-style: normal;
+  font-weight: 700;
+  text-align: left;
+  font-size: 20px;
+  line-height: 30px;
+  text-decoration: underline;
+  margin-bottom: 6px;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .upload_container .input_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .upload_container .input_container label {
+  color: #fff;
+  font-family: "Geometric 706";
+  font-style: normal;
+  font-weight: 700;
+  text-align: left;
+  width: 40%;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .upload_container .input_container input[type="file"] {
+  color: #000;
+  width: 40%;
   background-color: #fff;
+  border-radius: 5px;
+  padding: 10px 30px;
+  font-family: "Geometric 706";
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .select_check_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .select_check_container .input_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .select_check_container .input_container label {
+  color: #fff;
+  font-family: "Geometric 706";
+  font-style: normal;
+  font-weight: 700;
+  text-align: left;
+  font-size: 20px;
+  line-height: 36px;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .select_check_container .input_container select {
+  height: 36px;
+  font-size: 20px;
+  line-height: 36px;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .select_check_container .check_container .checkboxes {
+  margin-top: 36px;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .select_check_container .check_container .checkboxes .check input[type=checkbox] {
+  position: absolute;
+  left: -10000px;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .select_check_container .check_container .checkboxes .check {
+  background-image: url("/images/check.svg");
+  background-size: 30px 30px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 45px;
+  cursor: pointer;
+  position: relative;
+  color: #fff;
+  font-family: "Geometric 706";
+  font-style: normal;
+  font-weight: 700;
+  text-align: left;
+  font-size: 20px;
+  line-height: 36px;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .select_check_container .check_container .checkboxes .check.active {
+  background-image: url("/images/check_active.svg");
+}
+
+.calc_popup_bg .calc_container form.osago_calc .osago_bottom_nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .osago_bottom_nav .calc_center_button {
+  box-sizing: border-box;
+  display: block;
+  width: auto;
+  height: 55px;
+  margin: 0;
+  padding: 0 20px;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Geometric 706";
+  text-transform: none;
+  color: #000;
+  font-style: normal;
+  font-size: 32px;
+  line-height: 57px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .osago_bottom_nav .calc_center_button:hover {
+  color: #F15A0B;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .osago_bottom_nav .calc_left_arrow {
+  height: 55px;
+  width: 50px;
+  cursor: pointer;
+  background-image: url("/images/left_arrow.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  border-radius: none;
+  transition: 0.3s;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .osago_bottom_nav .calc_left_arrow:hover {
+  background-image: url("/images/left_arrow_bl.svg");
+}
+
+.calc_popup_bg .calc_container form.osago_calc .osago_bottom_nav .calc_right_arrow {
+  height: 55px;
+  width: 50px;
+  cursor: pointer;
+  background-image: url("/images/right_arrow.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  border-radius: none;
+  transition: 0.3s;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .osago_bottom_nav .calc_right_arrow:hover {
+  background-image: url("/images/right_arrow_bl.svg");
 }
 
 .calc_popup_bg .calc_container form.osago_calc #osago_step_2_nav {

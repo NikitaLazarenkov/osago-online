@@ -1,70 +1,777 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Расчет стоимости ОСАГО</title>
-    <link rel="stylesheet" href="/css/osago_calc.css">
-    <link rel="stylesheet" href="/css/fonts.css">
-    <script src="/js/jquery-3.2.1.js"></script>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Расчет стоимости ОСАГО</title>
+		<link rel="stylesheet" href="/css/osago_calc.css">
+		<link rel="stylesheet" href="/css/fonts.css">
+		<script src="/js/jquery-3.2.1.js"></script>
 </head>
 <body>
-    <div class="calc_popup_bg">
-        <nav class="calc_nav">
-            <div id="osago_open" class="calc_nav_button active">Осаго</div>
-            <div id="kasko_open" class="calc_nav_button">Каско</div>
-        </nav>
-        <section class="calc_container">
-            <form id="osago_calc" class="osago_calc">
-                <h1>Калькулятор ОСАГО</h1>
-                <nav class="osago_nav_vision">
-                    <div id="nav_position_1" class="osago_nav_vision_item active">1</div>
-                    <div id="nav_position_2" class="osago_nav_vision_item">2</div>
-                    <div id="nav_position_3" class="osago_nav_vision_item">3</div>
-                    <div id="nav_position_4" class="osago_nav_vision_item">4</div>
-                    <div id="nav_position_5" class="osago_nav_vision_item">5</div>
-                    <div class="osago_nav_vision_slider"></div>
-                </nav>
-                <div class="nav_vision_line"></div>
-                <div class="calc_content">
-                    <div class="content_slide"></div>
-                    <div class="content_slide"></div>
-                    <div class="content_slide"></div>
-                    <div class="content_slide"></div>
-                    <div class="content_slide"></div>
-                </div>
-                <nav id="osago_step_1_nav" class="osago_bottom_nav">
-                    <div></div>
-                    <button type="button" id="step1_go1" class="calc_center_button">Поехали</button>
-                    <button type="button" id="step1_go2" class="calc_right_arrow">></button>
-                </nav>
-                <nav id="osago_step_2_nav" class="osago_bottom_nav">
-                    <button type="button" id="step2_back" class="calc_left_arrow"><</button>
-                    <button type="button" id="step2_go1" class="calc_center_button">Оформить полис</button>
-                    <button type="button" id="step2_go2" class="calc_right_arrow">></button>
-                </nav>
-                <nav id="osago_step_3_nav" class="osago_bottom_nav">
-                    <button type="button" id="step3_back" class="calc_left_arrow"><</button>
-                    <button type="button" id="step3_go1" class="calc_center_button">Далее</button>
-                    <button type="button" id="step3_go1" class="calc_right_arrow">></button>
-                </nav>
-                <nav id="osago_step_4_nav" class="osago_bottom_nav">
-                    <button type="button" id="step4_back" class="calc_left_arrow"><</button>
-                    <button type="button" id="step4_go1" class="calc_center_button">Далее</button>
-                    <button type="button" id="step4_go1" class="calc_right_arrow">></button>
-                </nav>
-                <nav id="osago_step_5_nav" class="osago_bottom_nav">
-                    <button type="button" id="step5_back" class="calc_left_arrow"><</button>
-                    <button id="step5_go1" type="submit" class="calc_center_button">Отправить заявку</button>
-                    <div></div>
-                </nav>
-            </form>
-            <form id="kasko_calc" class="kasko_calc">
-                <h1>Калькулятор КАСКО в разработке</h1>
-            </form>
-        </section>
-    </div>
-    <script src="/js/osago_calc.js"></script>
+	<div class="calc_popup_bg">
+		<nav class="calc_nav">
+				<div id="osago_open" class="calc_nav_button active">Осаго</div>
+				<div id="kasko_open" class="calc_nav_button">Каско</div>
+		</nav>
+		<section class="calc_container">
+			<form id="osago_calc" class="osago_calc">
+				<h1>Калькулятор ОСАГО</h1>
+				<button type="button" class="calc_close_button"></button>
+				<nav class="osago_nav_vision">
+					<div id="nav_position_1" class="osago_nav_vision_item active">1</div>
+					<div id="nav_position_2" class="osago_nav_vision_item">2</div>
+					<div id="nav_position_3" class="osago_nav_vision_item">3</div>
+					<div id="nav_position_4" class="osago_nav_vision_item">4</div>
+					<div id="nav_position_5" class="osago_nav_vision_item">5</div>
+					<div class="osago_nav_vision_slider"></div>
+				</nav>
+				<div class="nav_vision_line"></div>
+				<div class="calc_content">
+					<div class="calc_sliders_container">
+						<div class="content_slide">
+							<div class="input_container">
+								<label for="owner">Владелец:</label>
+								<select name="owner" id="owner">
+									<option value="1">Физическое лицо</option>
+									<option value="2">Юридическое лицо</option>
+								</select>
+							</div>
+							<div class="input_container">
+								<label for="mesto_register">Место регистрации собственника:</label>
+								<select name="mesto_register" id="mesto_register">
+									<option value="36" data-val1="_" data-val2="_">Воронежская область (36)</option> 
+									<option value="50" data-val1="1.7" data-val2="1">Московская область (50)</option> 
+									<option value="77" data-val1="2" data-val2="1.2">Москва (77, 99, 177, 199)</option>
+									<option value="78" data-val1="1.8" data-val2="1">Санкт-Петербург (78, 178)</option>
+									<option value="47" data-val1="1.6" data-val2="1">Ленинградская область (47)</option>
+									<option value="1" data-val1="1.1" data-val2="0.8">Республика Адыгея (1)</option> 
+									<option value="2" data-val1="_" data-val2="_">Республика Башкирия (2)</option> 
+									<option value="3" data-val1="_" data-val2="_">Республика Бурятия (3)</option> 
+									<option value="4" data-val1="_" data-val2="_">Республика Алтай (4)</option> 
+									<option value="5" data-val1="_" data-val2="_">Республика Дагестан (5)</option> 
+									<option value="6" data-val1="_" data-val2="_">Республика Ингушетия (6)</option> 
+									<option value="7" data-val1="_" data-val2="_">Кабардино-Балкарская Республика (7)</option> 
+									<option value="8" data-val1="_" data-val2="_">Республика Калмыкия (8)</option> 
+									<option value="9" data-val1="1" data-val2="0.8">Карачаево-черкесская Республика (9)</option> 
+									<option value="10" data-val1="_" data-val2="_">Республика Карелия (10)</option> 
+									<option value="11" data-val1="_" data-val2="_">Республика КОМИ (11)</option> 
+									<option value="12" data-val1="_" data-val2="_">Марийская Республика  (12)</option> 
+									<option value="13" data-val1="_" data-val2="_">Республика Мордовия (13)</option> 
+									<option value="14" data-val1="_" data-val2="_">Республика Якутия (14)</option> 
+									<option value="15" data-val1="_" data-val2="_">Республика Северная Осетия-Алания (15)</option> 
+									<option value="16" data-val1="_" data-val2="_">Республика Татария (16)</option> 
+									<option value="17" data-val1="_" data-val2="_">Республика Тува (17)</option> 
+									<option value="18" data-val1="_" data-val2="_">Республика Удмуртия (18)</option> 
+									<option value="19" data-val1="_" data-val2="_">Республика Хакасия (19)</option> 
+									<option value="20" data-val1="0.7" data-val2="0.5">Чеченская Республика (20)</option> 
+									<option value="21" data-val1="_" data-val2="_">Чувашская Республика (21)</option> 
+									<option value="22" data-val1="_" data-val2="_">Алтайский край (22)</option> 
+									<option value="23" data-val1="_" data-val2="_">Краснодарский край (23)</option> 
+									<option value="24" data-val1="_" data-val2="_">Красноярский край (24)</option> 
+									<option value="25" data-val1="_" data-val2="_">Приморский край (25)</option> 
+									<option value="26" data-val1="_" data-val2="_">Ставропольский край (26)</option> 
+									<option value="27" data-val1="_" data-val2="_">Хабаровский край (27)</option> 
+									<option value="28" data-val1="_" data-val2="_">Амурская область (28)</option> 
+									<option value="29" data-val1="_" data-val2="_">Архангельская область (29)</option> 
+									<option value="30" data-val1="_" data-val2="_">Астраханская область (30)</option> 
+									<option value="31" data-val1="_" data-val2="_">Белгородская область (31)</option> 
+									<option value="32" data-val1="_" data-val2="_">Брянская область (32)</option> 
+									<option value="33" data-val1="_" data-val2="_">Владимирская область (33)</option> 
+									<option value="34" data-val1="_" data-val2="_">Волгоградская область (34)</option> 
+									<option value="35" data-val1="_" data-val2="_">Вологодская область (35)</option> 
+									<option value="37" data-val1="_" data-val2="_">Ивановская область (37)</option> 
+									<option value="38" data-val1="_" data-val2="_">Иркутская область (38)</option> 
+									<option value="39" data-val1="_" data-val2="_">Калининградская область (39)</option> 
+									<option value="40" data-val1="_" data-val2="_">Калужская область (40)</option> 
+									<option value="41" data-val1="_" data-val2="_">Камчатская область (41)</option> 
+									<option value="42" data-val1="_" data-val2="_">Кемеровская область (42)</option> 
+									<option value="43" data-val1="_" data-val2="_">Кировская область (43)</option> 
+									<option value="44" data-val1="_" data-val2="_">Костромская область (44)</option> 
+									<option value="45" data-val1="_" data-val2="_">Курганская область (45)</option> 
+									<option value="46" data-val1="_" data-val2="_">Курская область (46)</option> 
+									<option value="48" data-val1="_" data-val2="_">Липецкая область (48)</option> 
+									<option value="49" data-val1="_" data-val2="_">Магаданская область (49)</option> 
+									<option value="51" data-val1="_" data-val2="_">Мурманская область (51)</option> 
+									<option value="52" data-val1="_" data-val2="_">Нижегородская область (52)</option> 
+									<option value="53" data-val1="_" data-val2="_">Новгородская область (53)</option> 
+									<option value="54" data-val1="_" data-val2="_">Новосибирская область (54)</option> 
+									<option value="55" data-val1="_" data-val2="_">Омская область (55)</option> 
+									<option value="56" data-val1="_" data-val2="_">Оренбургская область (56)</option> 
+									<option value="57" data-val1="_" data-val2="_">Орловская область (57)</option> 
+									<option value="58" data-val1="_" data-val2="_">Пензенская область (58)</option> 
+									<option value="59" data-val1="_" data-val2="_">Пермская область (59)</option> 
+									<option value="60" data-val1="_" data-val2="_">Псковская область (60)</option> 
+									<option value="61" data-val1="_" data-val2="_">Ростовская область (61)</option> 
+									<option value="62" data-val1="_" data-val2="_">Рязанская область (62)</option> 
+									<option value="63" data-val1="_" data-val2="_">Самарская область (63)</option> 
+									<option value="64" data-val1="_" data-val2="_">Саратовская область (64)</option> 
+									<option value="65" data-val1="_" data-val2="_">Сахалинская область (65)</option> 
+									<option value="66" data-val1="_" data-val2="_">Свердловская область (66)</option> 
+									<option value="67" data-val1="_" data-val2="_">Смоленская область (67)</option> 
+									<option value="68" data-val1="_" data-val2="_">Тамбовская область (68)</option> 
+									<option value="69" data-val1="_" data-val2="_">Тверская область (69)</option> 
+									<option value="70" data-val1="_" data-val2="_">Томская область (70)</option> 
+									<option value="71" data-val1="_" data-val2="_">Тульская область (71)</option> 
+									<option value="72" data-val1="_" data-val2="_">Тюменская область (72)</option> 
+									<option value="73" data-val1="_" data-val2="_">Ульяновская область (73)</option> 
+									<option value="74" data-val1="_" data-val2="_">Челябинская область (74)</option> 
+									<option value="75" data-val1="_" data-val2="_">Читинская область (75)</option> 
+									<option value="76" data-val1="_" data-val2="_">Ярославская область (76)</option> 
+									<option value="79" data-val1="_" data-val2="_">Еврейская автономная область (79)</option> 
+									<option value="80" data-val1="0.55" data-val2="0.5">Агинский Бурятский автономный (80)</option> 
+									<option value="81" data-val1="0.85" data-val2="0.5">Коми-Пермяцкий автономный округ (81)</option> 
+									<option value="82" data-val1="0.55" data-val2="0.5">Корякский автономный округ (82)</option> 
+									<option value="83" data-val1="0.8" data-val2="0.5">Ненецкий автономный округ (83)</option> 
+									<option value="84" data-val1="0.55" data-val2="0.5">Таймырский автономный округ (84)</option> 
+									<option value="85" data-val1="1" data-val2="0.8">Усть-Ордынский автономный округ (85)</option> 
+									<option value="86" data-val1="_" data-val2="_">Ханты-Мансийский автономный округ (86)</option> 
+									<option value="87" data-val1="0.7" data-val2="0.5">Чукотский автономный округ (87)</option> 
+									<option value="88" data-val1="_" data-val2="_">Эвенский автономный округ (88)</option> 
+									<option value="89" data-val1="_" data-val2="_">Ямало-Ненецкий автономный округ  (89)</option> 
+									<option value="-" data-val1="_" data-val2="_">Иностранный гражданин  (-)</option> 
+								</select>
+							</div>
+							<div class="input_container">
+								<label for="more_mesto_register"></label>
+								<select name="more_mesto_register" id="more_mesto_register">
+									<option value="0" data-chained="85 84 83 82 81 80 20 9 50 77 78 47 1 87">---</option>
+
+									<option value="9" data-val1="1.8" data-val2="1" data-chained="2">Уфа (2)</option> 
+									<option value="10" data-val1="1.2" data-val2="0.8" data-chained="2">Благовещенск (2)</option> 
+									<option value="12" data-val1="1.1" data-val2="0.8" data-chained="2">Ишимбай (2)</option> 
+									<option value="13" data-val1="1.1" data-val2="0.8" data-chained="2">Кумертау (2)</option> 
+									<option value="16" data-val1="1.2" data-val2="0.8" data-chained="2">Октябрьский (2)</option> 
+									<option value="17" data-val1="1.1" data-val2="0.8" data-chained="2">Салават (2)</option> 
+									<option value="19" data-val1="1.3" data-val2="0.8" data-chained="2">Стерлитамак (2)</option> 
+									<option value="20" data-val1="1.3" data-val2="0.8" data-chained="2">Туймазы (2)</option> 
+									<option value="21" data-val1="1" data-val2="0.8" data-chained="2">Республика Башкирия - прочие (2)</option>
+
+									<option value="23" data-val1="1.3" data-val2="0.8" data-chained="3">Улан-Удэ (3)</option> 
+									<option value="24" data-val1="0.6" data-val2="0.5" data-chained="3">Республика Бурятия - прочие (3)</option>
+
+									<option value="26" data-val1="1.3" data-val2="0.8" data-chained="4">Горно-Алтайск (4)</option> 
+									<option value="27" data-val1="0.7" data-val2="0.5" data-chained="4">Республика Алтай - прочие (4)</option>
+
+									<option value="29" data-val1="1" data-val2="0.8" data-chained="5">Буйнакск (5)</option> 
+									<option value="30" data-val1="1" data-val2="0.8" data-chained="5">Дербент (5)</option> 
+									<option value="31" data-val1="1" data-val2="0.8" data-chained="5">Каспийск (5)</option> 
+									<option value="32" data-val1="1" data-val2="0.8" data-chained="5">Махачкала (5)</option> 
+									<option value="33" data-val1="1" data-val2="0.8" data-chained="5">Хасавюрт (5)</option> 
+									<option value="34" data-val1="0.7" data-val2="0.5" data-chained="5">Республика Дагестан - прочие (5)</option> 
+
+									<option value="38" data-val1="1.2" data-val2="0.8" data-chained="6">Малгобек (6)</option> 
+									<option value="39" data-val1="1" data-val2="0.8" data-chained="6">Назрань (6)</option> 
+									<option value="43" data-val1="0.7" data-val2="0.5" data-chained="6">Республика Ингушетия - прочие (6)</option> 
+
+									<option value="45" data-val1="1" data-val2="0.8" data-chained="7">Нальчик (7)</option> 
+									<option value="46" data-val1="1" data-val2="0.8" data-chained="7">Прохладный (7)</option> 
+									<option value="47" data-val1="0.7" data-val2="0.5" data-chained="7">Кабардино-Балкарская Республика - прочие (7)</option> 
+
+									<option value="49" data-val1="1.3" data-val2="0.8" data-chained="8">Элиста (8)</option> 
+									<option value="50" data-val1="0.6" data-val2="0.5" data-chained="8">Республика Калмыкия - прочие (8)</option> 
+
+									<option value="55" data-val1="1.3" data-val2="0.8" data-chained="10">Петрозаводск (10)</option>
+									<option value="56" data-val1="0.8" data-val2="0.5" data-chained="10">Республика Карелия - прочие (10)</option>
+
+									<option value="58" data-val1="1.6" data-val2="1" data-chained="11">Сыктывкар (11)</option>
+									<option value="62" data-val1="1.3" data-val2="0.8" data-chained="11">Ухта (11)</option>
+									<option value="63" data-val1="1" data-val2="0.8" data-chained="11">Республика КОМИ - прочие (11)</option>
+
+									<option value="65" data-val1="1" data-val2="0.8" data-chained="12">Волжск (12)</option>
+									<option value="66" data-val1="1.3" data-val2="0.8" data-chained="12">Йошкар-Ола (12)</option>
+									<option value="67" data-val1="0.7" data-val2="0.5" data-chained="12">Республика Марий Эл - прочие (12)</option>
+
+									<option value="69" data-val1="1" data-val2="0.8" data-chained="13">Рузаевка (13)</option> 
+									<option value="70" data-val1="1.2" data-val2="0.8" data-chained="13">Саранск (13)</option> 
+									<option value="71" data-val1="0.7" data-val2="0.5" data-chained="13">Республика Мордовия - прочие (13)</option>
+
+									<option value="73" data-val1="1.3" data-val2="0.8" data-chained="14">Нерюнгри (14)</option> 
+									<option value="74" data-val1="2" data-val2="1.2" data-chained="14">Якутск (14)</option> 
+									<option value="75" data-val1="0.8" data-val2="0.5" data-chained="14">Республика Саха (Якутия) - прочие (14)</option>
+
+									<option value="77" data-val1="1" data-val2="0.8" data-chained="15">Владикавказ (15)</option> 
+									<option value="78" data-val1="0.8" data-val2="0.5" data-chained="15">Республика Северная Осетия-Алания - прочие (15)</option>
+
+									<option value="80" data-val1="2" data-val2="1.2" data-chained="16">Казань (16)</option> 
+									<option value="81" data-val1="1.7" data-val2="1" data-chained="16">Набережные Челны (16)</option> 
+									<option value="82" data-val1="1.3" data-val2="0.8" data-chained="16">Альметьевск (16)</option> 
+									<option value="83" data-val1="1" data-val2="0.8" data-chained="16">Бугульма (16)</option> 
+									<option value="84" data-val1="1.2" data-val2="0.8" data-chained="16">Елабуга (16)</option> 
+									<option value="85" data-val1="1.3" data-val2="0.8" data-chained="16">Зеленодольск (16)</option> 
+									<option value="86" data-val1="1" data-val2="0.8" data-chained="16">Лениногорск (16)</option> 
+									<option value="87" data-val1="1.3" data-val2="0.8" data-chained="16">Нижнекамск (16)</option> 
+									<option value="88" data-val1="1" data-val2="0.8" data-chained="16">Чистополь (16)</option> 
+									<option value="89" data-val1="1.1" data-val2="0.8" data-chained="16">Республика Татария - прочие (16)</option>
+
+									<option value="91" data-val1="1" data-val2="0.8" data-chained="17">Кызыл (17)</option> 
+									<option value="92" data-val1="0.6" data-val2="0.5" data-chained="17">Республика Тыва - прочие (17)</option>
+
+									<option value="94" data-val1="1.6" data-val2="1" data-chained="18">Ижевск (18)</option> 
+									<option value="95" data-val1="1.1" data-val2="0.8" data-chained="18">Воткинск (18)</option> 
+									<option value="96" data-val1="1" data-val2="0.8" data-chained="18">Глазов (18)</option> 
+									<option value="97" data-val1="1" data-val2="0.8" data-chained="18">Сарапул (18)</option> 
+									<option value="98" data-val1="0.8" data-val2="0.5" data-chained="18">Республика Удмуртия - прочие (18)</option>
+
+									<option value="100" data-val1="1" data-val2="0.8" data-chained="19">Абакан (19)</option> 
+									<option value="101" data-val1="1" data-val2="0.8" data-chained="19">Саяногорск (19)</option> 
+									<option value="102" data-val1="1" data-val2="0.8" data-chained="19">Черногорск (19)</option> 
+									<option value="103" data-val1="0.6" data-val2="0.5" data-chained="19">Республика Хакасия - прочие (19)</option>
+
+									<option value="107" data-val1="1.6" data-val2="1" data-chained="21">Чебоксары (21)</option> 
+									<option value="108" data-val1="1" data-val2="0.8" data-chained="21">Канаш (21)</option> 
+									<option value="109" data-val1="1.1" data-val2="0.8" data-chained="21">Новочебоксарск (21)</option> 
+									<option value="110" data-val1="0.8" data-val2="0.5" data-chained="21">Чувашская Республика - прочие (21)</option>
+
+									<option value="112" data-val1="1.7" data-val2="1" data-chained="22">Барнаул (22)</option> 
+									<option value="113" data-val1="1.2" data-val2="0.8" data-chained="22">Бийск (22)</option> 
+									<option value="114" data-val1="1.1" data-val2="0.8" data-chained="22">Заринск (22)</option> 
+									<option value="115" data-val1="1.1" data-val2="0.8" data-chained="22">Новоалтайск (22)</option> 
+									<option value="116" data-val1="1.1" data-val2="0.8" data-chained="22">Рубцовск (22)</option> 
+									<option value="117" data-val1="0.7" data-val2="0.5" data-chained="22">Алтайский край - прочие (22)</option>
+
+									<option value="119" data-val1="1.8" data-val2="1" data-chained="23">Краснодар (23)</option> 
+									<option value="120" data-val1="1.3" data-val2="0.8" data-chained="23">Анапа (23)</option> 
+									<option value="121" data-val1="1.2" data-val2="0.8" data-chained="23">Армавир (23)</option> 
+									<option value="122" data-val1="1.1" data-val2="0.8" data-chained="23">Белореченск (23)</option> 
+									<option value="123" data-val1="1.3" data-val2="0.8" data-chained="23">Геленджик (23)</option> 
+									<option value="124" data-val1="1.1" data-val2="0.8" data-chained="23">Ейск (23)</option> 
+									<option value="125" data-val1="1.1" data-val2="0.8" data-chained="23">Кропоткин (23)</option> 
+									<option value="126" data-val1="1.1" data-val2="0.8" data-chained="23">Крымск (23)</option> 
+									<option value="127" data-val1="1.1" data-val2="0.8" data-chained="23">Курганинск (23)</option> 
+									<option value="128" data-val1="1.1" data-val2="0.8" data-chained="23">Лабинск (23)</option> 
+									<option value="129" data-val1="1.8" data-val2="0.8" data-chained="23">Новороссийск (23)</option> 
+									<option value="130" data-val1="1.1" data-val2="0.8" data-chained="23">Славянск-на-Кубани (23)</option> 
+									<option value="131" data-val1="1.2" data-val2="0.8" data-chained="23">Сочи (23)</option> 
+									<option value="132" data-val1="1.1" data-val2="0.8" data-chained="23">Тимашёвск (23)</option> 
+									<option value="133" data-val1="1.1" data-val2="0.8" data-chained="23">Тихорецк (23)</option> 
+									<option value="134" data-val1="1.2" data-val2="0.8" data-chained="23">Туапсе (23)</option> 
+									<option value="135" data-val1="1" data-val2="0.8" data-chained="23">Краснодарский край - прочие (23)</option>
+
+									<option value="137" data-val1="1.8" data-val2="1" data-chained="24">Красноярск (24)</option> 
+									<option value="138" data-val1="1.1" data-val2="0.8" data-chained="24">Ачинск (24)</option> 
+									<option value="139" data-val1="1.1" data-val2="0.8" data-chained="24">Зеленогорск (24)</option> 
+									<option value="140" data-val1="1" data-val2="0.8" data-chained="24">Канск (24)</option> 
+									<option value="141" data-val1="1" data-val2="0.8" data-chained="24">Лесосибирск (24)</option> 
+									<option value="142" data-val1="1" data-val2="0.8" data-chained="24">Минусинск (24)</option> 
+									<option value="143" data-val1="1" data-val2="0.8" data-chained="24">Назарово (24)</option> 
+									<option value="144" data-val1="1" data-val2="0.8" data-chained="24">Норильск (24)</option> 
+									<option value="145" data-val1="1.3" data-val2="0.8" data-chained="24">Железногорск (24)</option> 
+									<option value="146" data-val1="0.9" data-val2="0.5" data-chained="24">Красноярский край - прочие (24)</option>
+
+									<option value="148" data-val1="1.4" data-val2="1" data-chained="25">Владивосток (25)</option> 
+									<option value="149" data-val1="1" data-val2="0.8" data-chained="25">Арсеньев (25)</option> 
+									<option value="150" data-val1="1" data-val2="0.8" data-chained="25">Артём (25)</option> 
+									<option value="151" data-val1="1" data-val2="0.8" data-chained="25">Находка (25)</option> 
+									<option value="152" data-val1="1" data-val2="0.8" data-chained="25">Спасск-Дальний (25)</option> 
+									<option value="153" data-val1="1" data-val2="0.8" data-chained="25">Уссурийск (25)</option> 
+									<option value="154" data-val1="0.7" data-val2="0.5" data-chained="25">Приморский край - прочие (25)</option>
+
+									<option value="156" data-val1="1" data-val2="0.8" data-chained="26">Будённовск (26)</option> 
+									<option value="157" data-val1="1" data-val2="0.8" data-chained="26">Георгиевск (26)</option> 
+									<option value="158" data-val1="1" data-val2="0.8" data-chained="26">Ессентуки (26)</option> 
+									<option value="159" data-val1="1.2" data-val2="0.8" data-chained="26">Кисловодск (26)</option> 
+									<option value="160" data-val1="1" data-val2="0.8" data-chained="26">Минеральные Воды (26)</option> 
+									<option value="161" data-val1="1.2" data-val2="0.8" data-chained="26">Михайловск (26)</option> 
+									<option value="162" data-val1="1" data-val2="0.8" data-chained="26">Невинномысск (26)</option> 
+									<option value="163" data-val1="1" data-val2="0.8" data-chained="26">Пятигорск (26)</option> 
+									<option value="164" data-val1="1.2" data-val2="0.8" data-chained="26">Ставрополь (26)</option> 
+									<option value="165" data-val1="0.7" data-val2="0.5" data-chained="26">Ставропольский край - прочие (26)</option>
+
+									<option value="167" data-val1="1.7" data-val2="1" data-chained="27">Хабаровск (27)</option> 
+									<option value="168" data-val1="1" data-val2="0.8" data-chained="27">Амурск (27)</option> 
+									<option value="169" data-val1="1.3" data-val2="0.8" data-chained="27">Комсомольск-на-Амуре (27)</option> 
+									<option value="170" data-val1="0.8" data-val2="0.5" data-chained="27">Хабаровский край - прочие (27)</option> 
+
+									<option value="172" data-val1="1" data-val2="0.8" data-chained="28">Белогорск (28)</option> 
+									<option value="173" data-val1="1.4" data-val2="0.8" data-chained="28">Благовещенск (Амурской обл.) (28)</option> 
+									<option value="174" data-val1="1" data-val2="0.8" data-chained="28">Свободный (28)</option> 
+									<option value="175" data-val1="0.7" data-val2="0.5" data-chained="28">Амурская область - прочие (28)</option> 
+
+									<option value="177" data-val1="1.7" data-val2="1" data-chained="29">Северодвинск (29)</option> 
+									<option value="178" data-val1="1.8" data-val2="1" data-chained="29">Архангельск (29)</option> 
+									<option value="179" data-val1="1.6" data-val2="1" data-chained="29">Котлас (29)</option> 
+									<option value="180" data-val1="0.85" data-val2="0.5" data-chained="29">Архангельская область - прочие (29)</option> 
+
+									<option value="182" data-val1="1.4" data-val2="1" data-chained="30">Астрахань (30)</option> 
+									<option value="183" data-val1="0.8" data-val2="0.5" data-chained="30">Астраханская область - прочие (30)</option> 
+
+									<option value="185" data-val1="1.3" data-val2="0.8" data-chained="31">Белгород (31)</option> 
+									<option value="186" data-val1="1" data-val2="0.8" data-chained="31">Губкин (31)</option> 
+									<option value="187" data-val1="1" data-val2="0.8" data-chained="31">Старый Оскол (31)</option> 
+									<option value="188" data-val1="0.8" data-val2="0.5" data-chained="31">Белгородская область - прочие (31)</option> 
+
+									<option value="190" data-val1="1.5" data-val2="0.1" data-chained="32">Брянск (32)</option> 
+									<option value="191" data-val1="1" data-val2="0.8" data-chained="32">Клинцы (32)</option> 
+									<option value="192" data-val1="0.7" data-val2="0.5" data-chained="32">Брянская область - прочие (32)</option> 
+
+									<option value="195" data-val1="1.6" data-val2="1" data-chained="33">Владимир (33)</option> 
+									<option value="196" data-val1="1.1" data-val2="0.8" data-chained="33">Гусь-Хрустальный (33)</option> 
+									<option value="198" data-val1="1.2" data-val2="0.8" data-chained="33">Муром (33)</option> 
+									<option value="199" data-val1="1" data-val2="0.8" data-chained="33">Владимирская область - прочие (33)</option> 
+
+									<option value="201" data-val1="1.3" data-val2="0.8" data-chained="34">Волгоград (34)</option> 
+									<option value="202" data-val1="1.1" data-val2="0.8" data-chained="34">Волжский (34)</option> 
+									<option value="203" data-val1="1" data-val2="0.8" data-chained="34">Камышин (34)</option> 
+									<option value="204" data-val1="1" data-val2="0.8" data-chained="34">Михайловка (34)</option> 
+									<option value="205" data-val1="0.7" data-val2="0.5" data-chained="34">Волгоградская область - прочие (34)</option>
+
+									<option value="207" data-val1="1.7" data-val2="1" data-chained="35">Вологда (35)</option> 
+									<option value="208" data-val1="1.8" data-val2="1" data-chained="35">Череповец (35)</option> 
+									<option value="209" data-val1="0.9" data-val2="0.5" data-chained="35">Вологодская область - прочие (35)</option> 
+
+									<option value="211" data-val1="1.5" data-val2="1.1" data-chained="36">Воронеж (36)</option> 
+									<option value="212" data-val1="1.1" data-val2="0.9" data-chained="36">Борисоглебск (36)</option> 
+									<option value="213" data-val1="1.1" data-val2="0.9" data-chained="36">Лиски (36)</option> 
+									<option value="214" data-val1="1.1" data-val2="0.9" data-chained="36">Россошь (36)</option> 
+									<option value="215" data-val1="0.8" data-val2="0.6" data-chained="36">Воронежская область - прочие (36)</option> 
+
+									<option value="217" data-val1="1.8" data-val2="1" data-chained="37">Иваново (37)</option> 
+									<option value="218" data-val1="1.1" data-val2="0.8" data-chained="37">Кинешма (37)</option> 
+									<option value="219" data-val1="1" data-val2="0.8" data-chained="37">Шуя (37)</option> 
+									<option value="220" data-val1="0.9" data-val2="0.5" data-chained="37">Ивановская область - прочие (37)</option> 
+
+									<option value="222" data-val1="1.7" data-val2="1" data-chained="38">Иркутск (38)</option> 
+									<option value="223" data-val1="1.2" data-val2="0.8" data-chained="38">Ангарск (38)</option> 
+									<option value="224" data-val1="1" data-val2="0.8" data-chained="38">Братск (38)</option> 
+									<option value="225" data-val1="1" data-val2="0.8" data-chained="38">Тулун (38)</option> 
+									<option value="226" data-val1="1.1" data-val2="0.8" data-chained="38">Усолье-Сибирское (38)</option> 
+									<option value="227" data-val1="1" data-val2="0.8" data-chained="38">Усть-Илимск (38)</option> 
+									<option value="228" data-val1="1" data-val2="0.8" data-chained="38">Усть-Кут (38)</option> 
+									<option value="229" data-val1="1" data-val2="0.8" data-chained="38">Черемхово (38)</option> 
+									<option value="230" data-val1="1.3" data-val2="0.8" data-chained="38">Шелехов (38)</option> 
+									<option value="231" data-val1="0.8" data-val2="0.5" data-chained="38">Иркутская область - прочие (38)</option> 
+
+									<option value="233" data-val1="1.1" data-val2="0.8" data-chained="39">Калининград (39)</option> 
+									<option value="234" data-val1="0.8" data-val2="0.5" data-chained="39">Калининградская область - прочие (39)</option> 
+
+									<option value="236" data-val1="1.2" data-val2="0.8" data-chained="40">Калуга (40)</option> 
+									<option value="237" data-val1="1.3" data-val2="0.8" data-chained="40">Обнинск (40)</option> 
+									<option value="238" data-val1="0.9" data-val2="0.5" data-chained="40">Калужская область - прочие (40)</option> 
+
+									<option value="240" data-val1="1.1" data-val2="0.8" data-chained="41">Петропавловск-Камчатский (41)</option> 
+									<option value="241" data-val1="0.8" data-val2="0.5" data-chained="41">Камчатская область - прочие (41)</option> 
+
+									<option value="243" data-val1="1.9" data-val2="1" data-chained="42">Кемерово (42)</option> 
+									<option value="244" data-val1="1.8" data-val2="1" data-chained="42">Новокузнецк (42)</option> 
+									<option value="245" data-val1="1.2" data-val2="0.8" data-chained="42">Анжеро-Судженск (42)</option> 
+									<option value="246" data-val1="1.3" data-val2="0.8" data-chained="42">Белово (42)</option> 
+									<option value="247" data-val1="1.3" data-val2="0.8" data-chained="42">Берёзовский (42)</option> 
+									<option value="248" data-val1="1.2" data-val2="0.8" data-chained="42">Киселёвск (42)</option> 
+									<option value="250" data-val1="1.3" data-val2="0.8" data-chained="42">Междуреченск (42)</option> 
+									<option value="251" data-val1="1.3" data-val2="0.8" data-chained="42">Осинники (42)</option> 
+									<option value="252" data-val1="1.3" data-val2="0.8" data-chained="42">Прокопьевск (42)</option> 
+									<option value="253" data-val1="1.2" data-val2="0.8" data-chained="42">Юрга (42)</option> 
+									<option value="254" data-val1="1.1" data-val2="0.8" data-chained="42">Кемеровская область - прочие (42)</option> 
+
+									<option value="256" data-val1="1.4" data-val2="0.1" data-chained="43">Киров (Кировской обл.) (43)</option> 
+									<option value="257" data-val1="1.2" data-val2="0.8" data-chained="43">Кирово-Чепецк (43)</option> 
+									<option value="258" data-val1="0.8" data-val2="0.5" data-chained="43">Кировская область - прочие (43)</option> 
+
+									<option value="260" data-val1="1.3" data-val2="0.8" data-chained="44">Кострома (44)</option> 
+									<option value="261" data-val1="0.7" data-val2="0.5" data-chained="44">Костромская область - прочие (44)</option> 
+
+									<option value="263" data-val1="1.3" data-val2="0.8" data-chained="45">Курган (45)</option> 
+									<option value="264" data-val1="1" data-val2="0.8" data-chained="45">Шадринск (45)</option> 
+									<option value="265" data-val1="0.6" data-val2="0.5" data-chained="45">Курганская область - прочие (45)</option> 
+
+									<option value="267" data-val1="1.2" data-val2="0.8" data-chained="46">Курск (46)</option> 
+									<option value="268" data-val1="1" data-val2="0.8" data-chained="46">Железногорск Курской обл (46)</option> 
+									<option value="269" data-val1="0.7" data-val2="0.5" data-chained="46">Курская область - прочие (46)</option> 
+
+									<option value="271" data-val1="1.5" data-val2="1" data-chained="48">Липецк (48)</option> 
+									<option value="272" data-val1="1" data-val2="0.8" data-chained="48">Елец (48)</option> 
+									<option value="273" data-val1="0.8" data-val2="0.5" data-chained="48">Липецкая область - прочие (48)</option> 
+
+									<option value="275" data-val1="1.2" data-val2="0.8" data-chained="49">Магадан (49)</option> 
+									<option value="276" data-val1="0.6" data-val2="0.5" data-chained="49">Магаданская область - прочие (49)</option> 
+
+									<option value="278" data-val1="1.1" data-val2="0.8" data-chained="51">Апатиты (51)</option> 
+									<option value="279" data-val1="1.1" data-val2="0.8" data-chained="51">Мончегорск (51)</option> 
+									<option value="280" data-val1="1.7" data-val2="1" data-chained="51">Мурманск (51)</option> 
+									<option value="281" data-val1="1.3" data-val2="0.8" data-chained="51">Североморск (51)</option> 
+									<option value="282" data-val1="1" data-val2="0.8" data-chained="51">Мурманская область - прочие (51)</option> 
+
+									<option value="284" data-val1="1.8" data-val2="1" data-chained="52">Нижний Новгород (52)</option>
+									<option value="285" data-val1="1.1" data-val2="0.8" data-chained="52">Арзамас (52)</option> 
+									<option value="286" data-val1="1.3" data-val2="0.8" data-chained="52">Балахна (52)</option> 
+									<option value="287" data-val1="1.3" data-val2="0.8" data-chained="52">Бор (52)</option> 
+									<option value="288" data-val1="1.1" data-val2="0.8" data-chained="52">Выкса (52)</option> 
+									<option value="289" data-val1="1.3" data-val2="0.8" data-chained="52">Дзержинск (52)</option> 
+									<option value="290" data-val1="1.2" data-val2="0.8" data-chained="52">Кстово (52)</option> 
+									<option value="292" data-val1="1.1" data-val2="0.8" data-chained="52">Саров (52)</option> 
+									<option value="293" data-val1="1" data-val2="0.8" data-chained="52">Нижегородская область - прочие (52)</option> 
+
+									<option value="295" data-val1="1" data-val2="0.8" data-chained="53">Боровичи (53)</option> 
+									<option value="296" data-val1="1.3" data-val2="0.8" data-chained="53">Великий Новгород (53)</option> 
+									<option value="297" data-val1="0.9" data-val2="0.5" data-chained="53">Новгородская область - прочие (53)</option> 
+
+									<option value="299" data-val1="1.7" data-val2="1" data-chained="54">Новосибирск (54)</option> 
+									<option value="300" data-val1="1.3" data-val2="0.8" data-chained="54">Бердск (54)</option> 
+									<option value="301" data-val1="1.2" data-val2="0.8" data-chained="54">Искитим (54)</option> 
+									<option value="302" data-val1="1" data-val2="0.8" data-chained="54">Куйбышев (54)</option> 
+									<option value="303" data-val1="0.9" data-val2="0.5" data-chained="54">Новосибирская область - прочие (54)</option> 
+
+									<option value="305" data-val1="1.6" data-val2="1" data-chained="55">Омск (55)</option> 
+									<option value="306" data-val1="0.9" data-val2="0.5" data-chained="55">Омская область - прочие (55)</option>
+
+									<option value="308" data-val1="1.7" data-val2="1" data-chained="56">Оренбург (56)</option> 
+									<option value="309" data-val1="1" data-val2="0.8" data-chained="56">Бугуруслан (56)</option> 
+									<option value="310" data-val1="1" data-val2="0.8" data-chained="56">Бузулук (56)</option> 
+									<option value="311" data-val1="1" data-val2="0.8" data-chained="56">Новотроицк (56)</option> 
+									<option value="312" data-val1="1.1" data-val2="0.8" data-chained="56">Орск (56)</option> 
+									<option value="313" data-val1="0.8" data-val2="0.5" data-chained="56">Оренбургская область - прочие (56)</option> 
+
+									<option value="315" data-val1="1" data-val2="0.8" data-chained="57">Ливны (57)</option> 
+									<option value="316" data-val1="1" data-val2="0.8" data-chained="57">Мценск (57)</option> 
+									<option value="317" data-val1="1.2" data-val2="0.8" data-chained="57">Орёл (57)</option> 
+									<option value="318" data-val1="0.7" data-val2="0.5" data-chained="57">Орловская область - прочие (57)</option> 
+
+									<option value="320" data-val1="1.4" data-val2="1" data-chained="58">Пенза (58)</option> 
+									<option value="321" data-val1="1.2" data-val2="0.8" data-chained="58">Заречный Пензенской обл. (58)</option> 
+									<option value="322" data-val1="1" data-val2="0.8" data-chained="58">Кузнецк (58)</option> 
+									<option value="323" data-val1="0.7" data-val2="0.5" data-chained="58">Пензенская область - прочие (58)</option> 
+
+									<option value="325" data-val1="2" data-val2="1.2" data-chained="59">Пермь (59)</option> 
+									<option value="326" data-val1="1.3" data-val2="0.8" data-chained="59">Березники (59)</option> 
+									<option value="327" data-val1="1.3" data-val2="0.8" data-chained="59">Краснокамск (59)</option> 
+									<option value="329" data-val1="1" data-val2="0.8" data-chained="59">Лысьва (59)</option> 
+									<option value="330" data-val1="1.2" data-val2="0.8" data-chained="59">Соликамск (59)</option> 
+									<option value="331" data-val1="1" data-val2="0.8" data-chained="59">Чайковский (59)</option> 
+									<option value="333" data-val1="1.1" data-val2="0.8" data-chained="59">Пермская область - прочие (59)</option>
+
+									<option value="335" data-val1="1" data-val2="0.8" data-chained="60">Великие Луки (60)</option> 
+									<option value="336" data-val1="1.2" data-val2="0.8" data-chained="60">Псков (60)</option> 
+									<option value="337" data-val1="0.7" data-val2="0.5" data-chained="60">Псковская область - прочие (60)</option>
+
+									<option value="339" data-val1="1.8" data-val2="1" data-chained="61">Ростов-на-Дону (61)</option> 
+									<option value="340" data-val1="1.2" data-val2="0.8" data-chained="61">Азов (61)</option> 
+									<option value="341" data-val1="1.3" data-val2="0.8" data-chained="61">Батайск (61)</option> 
+									<option value="342" data-val1="1" data-val2="0.8" data-chained="61">Волгодонск (61)</option> 
+									<option value="343" data-val1="1" data-val2="0.8" data-chained="61">Гуково (61)</option> 
+									<option value="344" data-val1="1" data-val2="0.8" data-chained="61">Каменск-Шахтинский (61)</option> 
+									<option value="345" data-val1="1" data-val2="0.8" data-chained="61">Новочеркасск (61)</option> 
+									<option value="346" data-val1="1" data-val2="0.8" data-chained="61">Новошахтинск (61)</option> 
+									<option value="347" data-val1="1" data-val2="0.8" data-chained="61">Сальск (61)</option> 
+									<option value="348" data-val1="1" data-val2="0.8" data-chained="61">Таганрог (61)</option> 
+									<option value="349" data-val1="1.1" data-val2="0.8" data-chained="61">Шахты (61)</option> 
+									<option value="350" data-val1="0.8" data-val2="0.5" data-chained="61">Ростовская область - прочие (61)</option>
+
+									<option value="352" data-val1="1.4" data-val2="1" data-chained="61">Рязань (62)</option> 
+									<option value="353" data-val1="0.9" data-val2="0.5" data-chained="61">Рязанская область - прочие (62)</option>
+
+									<option value="355" data-val1="1.6" data-val2="1" data-chained="63">Самара (63)</option> 
+									<option value="356" data-val1="1.5" data-val2="1" data-chained="63">Тольятти (63)</option> 
+									<option value="357" data-val1="1.1" data-val2="0.8" data-chained="63">Новокуйбышевск (63)</option> 
+									<option value="359" data-val1="1.1" data-val2="0.8" data-chained="63">Сызрань (63)</option> 
+									<option value="360" data-val1="1.2" data-val2="0.8" data-chained="63">Чапаевск (63)</option> 
+									<option value="361" data-val1="0.9" data-val2="0.5" data-chained="63">Самарская область - прочие (63)</option> 
+
+									<option value="363" data-val1="1.6" data-val2="1" data-chained="64">Саратов (64)</option> 
+									<option value="364" data-val1="1" data-val2="0.8" data-chained="64">Балаково (64)</option> 
+									<option value="365" data-val1="1" data-val2="0.8" data-chained="64">Балашов (64)</option> 
+									<option value="366" data-val1="1" data-val2="0.8" data-chained="64">Вольск (64)</option> 
+									<option value="367" data-val1="1.2" data-val2="0.8" data-chained="64">Энгельс (64)</option> 
+									<option value="368" data-val1="0.7" data-val2="0.5" data-chained="64">Саратовская область - прочие (64)</option>
+
+									<option value="370" data-val1="1.5" data-val2="1" data-chained="65">Южно-Сахалинск (65)</option> 
+									<option value="371" data-val1="0.9" data-val2="0.5" data-chained="65">Сахалинская область - прочие (65)</option>
+
+									<option value="373" data-val1="1.8" data-val2="1" data-chained="66">Екатеринбург (66)</option> 
+									<option value="374" data-val1="1.1" data-val2="0.8" data-chained="66">Асбест (66)</option> 
+									<option value="375" data-val1="1.3" data-val2="0.8" data-chained="66">Березовский (66)</option> 
+									<option value="376" data-val1="1.3" data-val2="0.8" data-chained="66">Верхняя Пышма (66)</option>
+									<option value="377" data-val1="1.2" data-val2="0.8" data-chained="66">Верхняя Салда (66)</option>
+									<option value="382" data-val1="1.3" data-val2="0.8" data-chained="66">Новоуральск (66)</option> 
+									<option value="383" data-val1="1.3" data-val2="0.8" data-chained="66">Первоуральск (66)</option> 
+									<option value="384" data-val1="1.2" data-val2="0.8" data-chained="66">Полевской (66)</option> 
+									<option value="385" data-val1="1.1" data-val2="0.8" data-chained="66">Ревда  (66)</option> 
+									<option value="387" data-val1="1" data-val2="0.8" data-chained="66">Свердловская область - прочие (66)</option>
+
+									<option value="389" data-val1="1" data-val2="0.8" data-chained="67">Вязьма (67)</option> 
+									<option value="390" data-val1="1" data-val2="0.8" data-chained="67">Рославль (67)</option> 
+									<option value="391" data-val1="1" data-val2="0.8" data-chained="67">Сафоново (67)</option> 
+									<option value="392" data-val1="1.2" data-val2="0.8" data-chained="67">Смоленск (67)</option> 
+									<option value="393" data-val1="1" data-val2="0.8" data-chained="67">Ярцево (67)</option> 
+									<option value="394" data-val1="0.7" data-val2="0.5" data-chained="67">Смоленская область - прочие (67)</option>
+
+									<option value="396" data-val1="1" data-val2="0.8" data-chained="68">Мичуринск (68)</option> 
+									<option value="397" data-val1="1.2" data-val2="0.8" data-chained="68">Тамбов (68)</option> 
+									<option value="398" data-val1="0.8" data-val2="0.5" data-chained="68">Тамбовская область - прочие (68)</option>
+
+									<option value="400" data-val1="1.5" data-val2="1" data-chained="69">Тверь (69)</option> 
+									<option value="401" data-val1="1" data-val2="0.8" data-chained="69">Вышний Волочёк (69)</option> 
+									<option value="402" data-val1="1" data-val2="0.8" data-chained="69">Кимры (69)</option> 
+									<option value="403" data-val1="1" data-val2="0.8" data-chained="69">Ржев (69)</option> 
+									<option value="404" data-val1="0.8" data-val2="0.5" data-chained="69">Тверская область - прочие (69)</option>
+
+									<option value="406" data-val1="1.6" data-val2="1" data-chained="70">Томск (70)</option> 
+									<option value="407" data-val1="1.2" data-val2="0.8" data-chained="70">Северск (70)</option> 
+									<option value="408" data-val1="0.9" data-val2="0.5" data-chained="70">Томская область - прочие (70)</option>
+
+									<option value="410" data-val1="1.5" data-val2="1" data-chained="71">Тула (71)</option> 
+									<option value="411" data-val1="1" data-val2="0.8" data-chained="71">Алексин (71)</option> 
+									<option value="412" data-val1="1" data-val2="0.8" data-chained="71">Ефремов (71)</option> 
+									<option value="413" data-val1="1" data-val2="0.8" data-chained="71">Новомосковск (71)</option> 
+									<option value="414" data-val1="1" data-val2="2.8" data-chained="71">Узловая (71)</option> 
+									<option value="415" data-val1="1.2" data-val2="0.8" data-chained="71">Щёкино (71)</option> 
+									<option value="416" data-val1="0.9" data-val2="0.5" data-chained="71">Тульская область - прочие (71)</option>
+
+									<option value="418" data-val1="2" data-val2="1.2" data-chained="72">Тюмень (72)</option> 
+									<option value="420" data-val1="1.3" data-val2="0.8" data-chained="72">Тобольск (72)</option> 
+									<option value="421" data-val1="1.1" data-val2="0.8" data-chained="72">Тюменская область - прочие (72)</option> 
+
+									<option value="423" data-val1="1.4" data-val2="1" data-chained="73">Ульяновск (73)</option> 
+									<option value="424" data-val1="1.1" data-val2="0.8" data-chained="73">Димитровград (73)</option> 
+									<option value="425" data-val1="0.8" data-val2="0.5" data-chained="73">Ульяновская область - прочие (73)</option>
+
+									<option value="427" data-val1="1.7" data-val2="1" data-chained="74">Магнитогорск (74)</option> 
+									<option value="428" data-val1="2" data-val2="1.2" data-chained="74">Челябинск (74)</option> 
+									<option value="429" data-val1="1.3" data-val2="0.8" data-chained="74">Златоуст (74)</option> 
+									<option value="430" data-val1="1.5" data-val2="1" data-chained="74">Копейск (74)</option> 
+									<option value="431" data-val1="1.3" data-val2="0.8" data-chained="74">Миасс (74)</option> 
+									<option value="433" data-val1="1.1" data-val2="0.8" data-chained="74">Сатка (74)</option> 
+									<option value="435" data-val1="1.1" data-val2="0.8" data-chained="74">Чебаркуль (74)</option> 
+									<option value="436" data-val1="1" data-val2="0.8" data-chained="74">Челябинская область - прочие (74)</option>
+
+									<option value="438" data-val1="1" data-val2="0.8" data-chained="75">Краснокаменск (75)</option> 
+									<option value="439" data-val1="1.1" data-val2="0.8" data-chained="75">Чита (75)</option> 
+									<option value="440" data-val1="0.7" data-val2="0.5" data-chained="75">Читинская область - прочие (75)</option>
+
+									<option value="442" data-val1="1.5" data-val2="1" data-chained="76">Ярославль (76)</option> 
+									<option value="444" data-val1="0.9" data-val2="0.5" data-chained="76">Ярославская область - прочие (76)</option>
+
+									<option value="446" data-val1="1" data-val2="0.8" data-chained="79">Биробиджан (79)</option> 
+									<option value="447" data-val1="0.7" data-val2="0.5" data-chained="79">Еврейская автономная область - прочие (79)</option> 
+
+									<option value="461" data-val1="2" data-val2="1.2" data-chained="86">Сургут (86)</option> 
+									<option value="462" data-val1="1" data-val2="0.8" data-chained="86">Когалым (86)</option> 
+									<option value="463" data-val1="1.3" data-val2="0.8" data-chained="86">Нефтеюганск (86)</option> 
+									<option value="464" data-val1="1.8" data-val2="1" data-chained="86">Нижневартовск (86)</option> 
+									<option value="465" data-val1="1.3" data-val2="0.8" data-chained="86">Нягань (86)</option> 
+									<option value="466" data-val1="1.5" data-val2="1" data-chained="86">Ханты-Мансийск (86)</option> 
+									<option value="467" data-val1="1.1" data-val2="0.8" data-chained="86">Ханты-Мансийский автономный округ - прочие (86)</option> 
+
+									<option value="473" data-val1="1" data-val2="0.8" data-chained="89">Новый Уренгой (89)</option> 
+									<option value="474" data-val1="1.7" data-val2="1" data-chained="89">Ноябрьск (89)</option> 
+									<option value="475" data-val1="1.1" data-val2="0.8" data-chained="89">Ямало-Ненецкий автономный округ - прочие (89)</option> 
+								</select>
+							</div>
+							<div class="input_container">
+								<label for="transport_type">Тип транспортного средства:</label>
+								<select name="transport_type" id="transport_type">
+									<option value="b">Легковой автомобиль</option>
+									<option value="c">Грузовой автомобиль</option>            
+									<option value="d">Автобус</option>       
+									<option value="a" data-val1="1579">Мотоцикл, мотороллер</option> 
+									<option value="tramvai" data-val1="2101">Трамвай</option>
+									<option value="trolleibus" data-val1="3370">Троллейбус</option>
+									<option value="traktor" data-val1="1579">Трактор, самоходная дорожно-строительная или проч.</option>
+									<option value="pritsep">Прицеп</option>
+								</select>
+							</div>
+							<div class="input_container">
+								<select name="more_type" id="more_type">
+									<option value="0" data-chained="a tramvai trolleibus traktor">---</option>
+									<option value="1" data-val1="4118" data-val2="3087" data-chained="b">Для личного использования</option> 
+									<option value="2" data-val1="6166" data-val2="6166" data-chained="b">Используемый в качестве такси</option> 
+									<option value="3" data-val1="4211" data-val2="4211" data-chained="c">С разрешенной максимальной массой 16 тонн и менее</option>
+									<option value="4" data-val1="6341" data-val2="6341" data-chained="c">С разрешенной максимальной массой более 16 тонн</option>
+									<option value="5" data-val1="6166" data-val2="6166" data-chained="d">Используемый в качестве такси</option> 
+									<option value="6" data-val1="3370" data-val2="3370" data-chained="d">С числом мест сидения до 16 (включительно)</option> 
+									<option value="7" data-val1="4211" data-val2="4211" data-chained="d">С числом мест сидения свыше 16</option>
+									<option value="8" data-val1="810" data-val2="810" data-chained="pritsep">К грузовым автомобилям, полуприцепы, прицепы-роспуски</option> 
+									<option value="9" data-val1="395" data-val2="395" data-chained="pritsep">К легковым автомобилям (юр. лица), мотоциклам, мотороллерам</option> 
+									<option value="10" data-val1="305" data-val2="305" data-chained="pritsep">К тракторам, самоходным дорожно-строительным и иным машинам</option> 
+								</select>
+							</div>
+							<div class="select_check_container">
+								<div class="input_container">
+									<label for="osago_power">Мощность двигателя (л.с.):</label>
+									<select name="osago_power" id="osago_power">
+										<option value="0" data-value="0.6">до 50 включительно (Км = 0.6)</option> 
+										<option value="1" data-value="1">свыше 50 до 70 включительно (Км = 1) </option> 
+										<option value="2" data-value="1.1">свыше 70 до 100 включительно (Км = 1.1) </option> 
+										<option value="3" data-value="1.2">свыше 100 до 120 включительно (Км = 1.2) </option> 
+										<option value="4" data-value="1.4">свыше 120 до 150 включительно (Км = 1.4) </option> 
+										<option value="5" data-value="1.6">свыше 150 (1.6) </option> 
+									</select>
+								</div>
+								<div class="check_container">
+									<div class="checkboxes">
+										<div class="check">
+											Прицеп
+											<input type="checkbox" value="0" id="osago_pritsep" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="content_slide">
+							<div class="input_container">
+								<label for="osago_staj">Срок страхования (период использования автомоблиля):</label>
+								<select name="osago_staj" id="osago_staj">
+									<option value="0" data-value="1">1 год</option> 
+									<option value="1" data-value="0.95">9 месяцев (Кс = 0.95)</option> 
+									<option value="2" data-value="0.9">8 месяцев (Кс = 0.9)</option> 
+									<option value="3" data-value="0.8">7 месяцев (Кс = 0.8)</option> 
+									<option value="4" data-value="0.7">6 месяцев (Кс = 0.7)</option> 
+									<option value="5" data-value="0.65">5 месяцев (Кс = 0.65)</option> 
+									<option value="6" data-value="0.6">4 месяца (Кс = 0.6)</option>
+									<option value="7" data-value="0.5">3 месяца (Кс = 0.5)</option>
+									<option value="8" data-value="0.4">2 месяца (Кс = 0.4)</option>
+									<option value="9" data-value="0.3">от 16 дней до 1 месяца (Кс = 0.3)</option>
+									<option value="10" data-value="0.2">от 5 до 15 дней (Кс = 0.2)</option>
+								</select>
+							</div>
+							<div class="radio_container">
+								<label for="osago_dopusk">Лица, допущенные к управлению:</label>
+								<div class="radioblock">
+									<div class="radio">С ограничениями</div>
+									<div class="radio">Без ограничений</div>
+									<input type="hidden" name="osago_dopusk" id="osago_dopusk"/>
+								</div>
+							</div>
+							<div class="input_container">
+								<label for="osago_staj">Возраст и водительский стаж:</label>
+								<select name="osago_staj" id="osago_staj">
+									<option value="0" data-value="1">старше 22 лет, стаж свыше 3 лет (Квс = 1) </option>
+									<option value="1" data-value="1.7">старше 22 лет, стаж до 3 лет включительно (Квс = 1.7) </option>
+									<option value="2" data-value="1.6">до 22 лет включительно, стаж свыше 3 лет (Квс = 1.6) </option> 
+									<option value="3" data-value="1.8">до 22 лет включительно, стаж до 3 лет включительно (Квс = 1.8) </option> 
+								</select>
+							</div>
+							<div class="input_container">
+								<label for="osago_staj">Скидка за безаварийную езду:</label>
+								<select name="osago_staj" id="osago_staj">
+									<option value="0" title="1">Страхование впервые (класс 3, кбм 1)</option> 
+									<option value="1" title="0.95">1 год без аварий (класс 4, кбм 0,95)</option> 
+									<option value="2" title="0.9">2 года без аварий (класс 5, кбм 0,9)</option> 
+									<option value="3" title="0.85">3 года без аварий (класс 6, кбм 0,85)</option> 
+									<option value="4" title="0.8">4 года без аварий (класс 7, кбм 0,8)</option> 
+									<option value="5" title="0.75">5 лет без аварий (класс 8, кбм 0,75)</option> 
+									<option value="6" title="0.7">6 лет без аварий (класс 9, кбм 0,7)</option> 
+									<option value="7" title="0.65">7 лет без аварий (класс 10, кбм 0,65)</option> 
+									<option value="8" title="0.6">8 лет без аварий (класс 11, кбм 0,6)</option> 
+									<option value="9" title="0.55">9 лет без аварий (класс 12, кбм 0,55)</option> 
+									<option value="10" title="0.5">10 лет без аварий(класс 13, кбм 0,5)</option>
+									<option value="11" title="2.45">(класс M, кбм 2,45)</option> 
+									<option value="12" title="2.3">(класс 0, кбм 2,3)</option> 
+									<option value="13" title="1.55">(класс 1, кбм 1,55)</option> 
+									<option value="14" title="1.4">(класс 2, кбм 1,4)</option> 
+								</select>
+							</div>
+							<p>Стоимость полиса по<br>предварительному расчету составляет: <span>3242</span> рублей</p>
+							<p>Итого с оформлением полиса<br>ОСАГО (+ от 1000 рублей за услуги): <span>3471</span> рублей</p>
+						</div>
+						<div class="content_slide">
+							<div class="input_container">
+								<label for="">Ваше имя (полностью):</label>
+								<input type="text" placeholder="Ф.И.О.">
+							</div>
+							<div class="double_input">
+								<div class="input_container">
+									<label for="">Ваш телефон:</label>
+									<input type="text" placeholder="+7(123)456-78-90">
+								</div>
+								<div class="input_container">
+									<label for="">Ваш e-mail адрес:</label>
+									<input type="email" placeholder="mail@mail.ru">
+								</div>
+							</div>
+							<h2>
+								Необходимо загрузить документы для оформления<br>
+									полиса ОСАГО
+							</h2>
+							<div class="upload_container">
+								<div class="upload_title">
+										Скан или фото паспорта РФ собственника ТС:
+								</div>
+								<div class="input_container">
+									<label for="">1-я страница паспорта и страница с регистрацией</label>
+									<input type="file">
+								</div>
+							</div>
+						</div>
+						<div class="content_slide">
+							<div class="upload_container">
+								<div class="upload_title">
+										Скан или фото свидетельства о регистрации транспортного средства (СТС) или паспорт транспортного средства (ПТС):
+								</div>
+								<div class="input_container">
+									<label for="">СТС или ПТС</label>
+									<input type="file">
+								</div>
+							</div>
+							<div class="upload_container">
+								<div class="upload_title">
+										Скан или фото Водительского удостоверения всех лиц, допущенных к управлению ТС:
+								</div>
+								<div class="input_container">
+									<label for="">ВУ всех лиц допущенных к управлению</label>
+									<input type="file">
+								</div>
+							</div>
+							<div class="upload_container">
+								<div class="upload_title">
+										Если у Вас уже есть диагностическая карта, просто прикрепите её:
+								</div>
+								<div class="input_container">
+									<label for="">Диагностическая карта ТС</label>
+									<input type="file">
+								</div>
+							</div>
+							<div class="check_container">
+								<div class="checkboxes">
+									<div class="check">
+											Если у Вас отсутствует диагностическая карта и 
+											Вам нужно её оформить, поставьте отметку здесь:
+										<input type="checkbox" value="0" id="" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="content_slide">Практический опыт показывает, что рамки и место обучения кадров...</div>
+					</div>
+				</div>
+				<nav id="osago_step_1_nav" class="osago_bottom_nav">
+					<div></div>
+					<button type="button" id="step1_go1" class="calc_center_button">Поехали</button>
+					<button type="button" id="step1_go2" class="calc_right_arrow"></button>
+				</nav>
+				<nav id="osago_step_2_nav" class="osago_bottom_nav">
+					<button type="button" id="step2_back" class="calc_left_arrow"></button>
+					<button type="button" id="step2_go1" class="calc_center_button">Оформить полис</button>
+					<button type="button" id="step2_go2" class="calc_right_arrow"></button>
+				</nav>
+				<nav id="osago_step_3_nav" class="osago_bottom_nav">
+					<button type="button" id="step3_back" class="calc_left_arrow"></button>
+					<button type="button" id="step3_go1" class="calc_center_button">Далее</button>
+					<button type="button" id="step3_go1" class="calc_right_arrow"></button>
+				</nav>
+				<nav id="osago_step_4_nav" class="osago_bottom_nav">
+					<button type="button" id="step4_back" class="calc_left_arrow"></button>
+					<button type="button" id="step4_go1" class="calc_center_button">Далее</button>
+					<button type="button" id="step4_go1" class="calc_right_arrow"></button>
+				</nav>
+				<nav id="osago_step_5_nav" class="osago_bottom_nav">
+					<button type="button" id="step5_back" class="calc_left_arrow"></button>
+					<button id="step5_go1" type="submit" class="calc_center_button">Отправить заявку</button>
+					<div></div>
+				</nav>
+			</form>
+			<form id="kasko_calc" class="kasko_calc">
+				<h1>Калькулятор КАСКО в разработке</h1>
+			</form>
+		</section>
+	</div>
+	<script src="/js/osago_calc.js"></script>
+	<script src="./js/jquery.chained.js"></script>
+
+	<script>
+			$("#more_type").chained("#transport_type");
+			$("#more_mesto_register").chained("#mesto_register");
+		</script>
 </body>
 </html>
