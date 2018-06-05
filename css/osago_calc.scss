@@ -11,6 +11,12 @@ $orange:#F15A0B;
     background-repeat: repeat-x repeat-y;
     overflow: scroll;
 
+    button,
+    input,
+    select {
+        outline: none;
+    }
+
     nav.calc_nav {
         box-sizing: border-box;
         margin: 20px auto 20px auto;
@@ -91,7 +97,6 @@ $orange:#F15A0B;
                 transition: 0.7s;
             }
             .calc_close_button:hover {
-                background-image: url('/images/close_bl.svg');
                 transform: rotate(180deg);
             }
 
@@ -122,8 +127,8 @@ $orange:#F15A0B;
                     transition: 1s;
                 }
                 .osago_nav_vision_item.active {
-                    margin-left: 45px;
-                    margin-right: 45px;
+                    margin-left: 60px;
+                    margin-right: 60px;
                     transition: 1s;
                 }
                 #nav_position_1.active ~ .osago_nav_vision_slider {
@@ -131,18 +136,22 @@ $orange:#F15A0B;
                     right: auto;
                 }
                 #nav_position_2.active ~ .osago_nav_vision_slider {
-                    left: calc(20% - 30px);
+                    left: calc(16.66% - 30px);
                     right: auto;
                 }
                 #nav_position_3.active ~ .osago_nav_vision_slider {
-                    left: calc(40% - 30px);
+                    left: calc(33.33% - 30px);
                     right: auto;
                 }
                 #nav_position_4.active ~ .osago_nav_vision_slider {
-                    left: calc(60% - 30px);
+                    left: calc(50% - 30px);
                     right: auto;
                 }
                 #nav_position_5.active ~ .osago_nav_vision_slider {
+                    left: calc(66.66% - 30px);
+                    right: auto;
+                }
+                #nav_position_6.active ~ .osago_nav_vision_slider {
                     left: calc(100% - 230px);
                     right: auto;
                 }
@@ -173,7 +182,7 @@ $orange:#F15A0B;
             .calc_content {
                 position: relative;
                 width: 823px;
-                height: 450px;
+                min-height: 450px;
                 padding: 0;
                 overflow: hidden;
                 margin: 20px 0 35px 0;
@@ -186,7 +195,7 @@ $orange:#F15A0B;
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
-                    width: calc(843px * 5);
+                    width: calc(844px * 6);
                     transition: 1s;
 
                     .content_slide {
@@ -201,6 +210,8 @@ $orange:#F15A0B;
                             text-align: center;
                             font-size: 28px;
                             line-height: 32px;
+                            padding: 0;
+                            margin: 12px 0;
                         }
 
                         p {
@@ -211,6 +222,22 @@ $orange:#F15A0B;
                             text-align: left;
                             font-size: 20px;
                             line-height: 22px;
+                            margin: 0;
+                            margin-bottom: 18px;
+                            
+                            span {
+                                font-size: 32px;
+                                font-weight: 700;
+                            }
+                        }
+                        p.result {
+                            color: #fff;
+                            font-family: "Geometric 706";
+                            font-style: normal;
+                            font-weight: 400;
+                            text-align: left;
+                            font-size: 22px;
+                            line-height: 30px;
                             margin: 0;
                             margin-bottom: 18px;
                             
@@ -233,19 +260,26 @@ $orange:#F15A0B;
                                 line-height: 36px;
                             }
                             select {
-                                height: 36px;
-                                font-size: 20px;
-                                line-height: 36px;
+                                height: 36px !important;
+                                font-size: 20px  !important;
+                                line-height: 36px  !important;
                                 margin-bottom: 12px;
+                                font-family: "Geometric 706";
+                                font-style: normal;
                             }
-                            input[type="text"] {
+                            input[type="text"],
+                            input[type="email"] {
+                                box-sizing: border-box;
+                                display: block;
+                                font-family: "Geometric 706";
+                                font-style: normal;
                                 height: 36px;
                                 font-size: 20px;
                                 line-height: 36px;
                                 margin-bottom: 12px;
                                 border-radius: 5px;
                                 border: none;
-                                padding: 0 20px;
+                                padding: 0px 20px;
                             }
                         }
                         .double_input {
@@ -266,6 +300,8 @@ $orange:#F15A0B;
                                     line-height: 36px;
                                 }
                                 input {
+                                    font-family: "Geometric 706";
+                                    font-style: normal;
                                     height: 36px;
                                     font-size: 20px;
                                     line-height: 36px;
@@ -367,7 +403,7 @@ $orange:#F15A0B;
                                 align-items: center;
                                 box-sizing: border-box;
                                 padding: 10px 20px;
-                                border: 1px solid #fff;
+                                border: 2px solid #fff;
                                 border-radius: 10px;
 
                                 label {
@@ -413,9 +449,11 @@ $orange:#F15A0B;
                                     line-height: 36px;
                                 }
                                 select {
+                                    font-family: "Geometric 706";
+                                    font-style: normal;
                                     height: 36px;
                                     font-size: 20px;
-                                    line-height: 36px;
+                                    line-height: 36px !important;
                                 }
                             }
                             .check_container {
@@ -491,9 +529,6 @@ $orange:#F15A0B;
                     border-radius: none;
                     transition: 0.3s;
                 }
-                .calc_left_arrow:hover {
-                    background-image: url('/images/left_arrow_bl.svg');
-                }
                 .calc_right_arrow {
                     height: 55px;
                     width: 50px;
@@ -506,9 +541,6 @@ $orange:#F15A0B;
                     border-radius: none;
                     transition: 0.3s;
                 }
-                .calc_right_arrow:hover {
-                    background-image: url('/images/right_arrow_bl.svg');
-                }
             }
             #osago_step_2_nav {
                 display: none;
@@ -520,6 +552,9 @@ $orange:#F15A0B;
                 display: none;
             }
             #osago_step_5_nav {
+                display: none;
+            }
+            #osago_step_6_nav {
                 display: none;
             }
         }

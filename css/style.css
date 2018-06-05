@@ -1,0 +1,118 @@
+.dropcontainer {
+	position:relative;
+	font-size: 20px;
+	color: #000;
+	text-decoration: none;
+	font-family: "Geometric 706";
+	font-style: normal;
+	} 
+
+.trigger {
+	color: #000;
+	padding: 0px 10px;
+	font-size: 20px;
+	width: 100%;
+	height: 36px;
+	text-decoration: none;
+	line-height: 36px;
+	font-family: "Geometric 706";
+	font-style: normal;
+	background: #fff url(../images/select-arrow-open.png) 98% center no-repeat;
+	display: block;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease; 
+	transition: all 0.5s ease;
+	}
+
+.trigger:hover {
+	color: #000;
+	background: #f5f5f5 url(../images/select-arrow-open.png) 98% center no-repeat;
+	}
+
+.activetrigger {
+	color: #000;
+	padding: 0 10px;
+	font-size: 20px;
+	width: 100%;
+	height: 36px;
+	line-height: 36px;
+	text-decoration: none;
+	background: #fff url(../images/select-arrow-close.png) 98% center no-repeat;
+	display: block;
+	border: 1px solid #fff;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	}
+
+.activetrigger:hover {
+	background: #fff url(../images/select-arrow-close.png) 98% center no-repeat;
+	color: #000;
+	}
+
+.activetrigger:active {
+	background: #fff url(../images/select-arrow-close.png) 98% center no-repeat;
+	color: #000;
+	}
+
+.dropcontainer ul {
+	position: absolute;
+	font-size: 20px;
+	border: 1px solid #ccc;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-top: none;
+	background: #ccc;
+	list-style-type: none;
+	text-decoration: none;
+	padding: 10px;
+	margin: 0;
+	width: 100%;
+	z-index: 100;
+	max-height: 200px;
+	overflow: scroll;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	}
+
+.dropcontainer ul li {
+	padding: 5px;
+	text-decoration: none;
+	-webkit-transition: all 0.5s ease; 
+	-moz-transition: all 0.5s ease; 
+	-o-transition: all 0.5s ease; 
+	transition: all 0.5s ease;
+	}
+
+.dropcontainer ul li:hover {
+	background: #ccc;
+	color: #F15A0B;
+	text-decoration: none;
+	outline: none;
+	}
+
+.dropcontainer ul li:first-child {
+	display: none;
+	}
+
+.dropcontainer ul li:last-child {
+	border-bottom: none;
+	}
+
+.dropdownhidden {
+	display: none;
+	}
+
+.dropdownvisible {
+	height: auto;
+	}
+

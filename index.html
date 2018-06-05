@@ -7,7 +7,10 @@
 		<title>Расчет стоимости ОСАГО</title>
 		<link rel="stylesheet" href="/css/osago_calc.css">
 		<link rel="stylesheet" href="/css/fonts.css">
+		<link rel="stylesheet" href="/css/style.css">
+		<!--<link rel="stylesheet" href="/css/generic.css">-->
 		<script src="/js/jquery-3.2.1.js"></script>
+		<script src="/js/select.js"></script>
 </head>
 <body>
 	<div class="calc_popup_bg">
@@ -25,113 +28,116 @@
 					<div id="nav_position_3" class="osago_nav_vision_item">3</div>
 					<div id="nav_position_4" class="osago_nav_vision_item">4</div>
 					<div id="nav_position_5" class="osago_nav_vision_item">5</div>
+					<div id="nav_position_6" class="osago_nav_vision_item">6</div>
 					<div class="osago_nav_vision_slider"></div>
 				</nav>
 				<div class="nav_vision_line"></div>
 				<div class="calc_content">
 					<div class="calc_sliders_container">
 						<div class="content_slide">
-							<div class="input_container">
+							<p class="input_container">
 								<label for="owner">Владелец:</label>
-								<select name="owner" id="owner">
+								<select class="turnintodropdown" name="owner" id="owner">
 									<option value="1">Физическое лицо</option>
 									<option value="2">Юридическое лицо</option>
 								</select>
-							</div>
+							</p>
 							<div class="input_container">
-								<label for="mesto_register">Место регистрации собственника:</label>
-								<select name="mesto_register" id="mesto_register">
-									<option value="36" data-val1="_" data-val2="_">Воронежская область (36)</option> 
-									<option value="50" data-val1="1.7" data-val2="1">Московская область (50)</option> 
-									<option value="77" data-val1="2" data-val2="1.2">Москва (77, 99, 177, 199)</option>
-									<option value="78" data-val1="1.8" data-val2="1">Санкт-Петербург (78, 178)</option>
-									<option value="47" data-val1="1.6" data-val2="1">Ленинградская область (47)</option>
-									<option value="1" data-val1="1.1" data-val2="0.8">Республика Адыгея (1)</option> 
-									<option value="2" data-val1="_" data-val2="_">Республика Башкирия (2)</option> 
-									<option value="3" data-val1="_" data-val2="_">Республика Бурятия (3)</option> 
-									<option value="4" data-val1="_" data-val2="_">Республика Алтай (4)</option> 
-									<option value="5" data-val1="_" data-val2="_">Республика Дагестан (5)</option> 
-									<option value="6" data-val1="_" data-val2="_">Республика Ингушетия (6)</option> 
-									<option value="7" data-val1="_" data-val2="_">Кабардино-Балкарская Республика (7)</option> 
-									<option value="8" data-val1="_" data-val2="_">Республика Калмыкия (8)</option> 
-									<option value="9" data-val1="1" data-val2="0.8">Карачаево-черкесская Республика (9)</option> 
-									<option value="10" data-val1="_" data-val2="_">Республика Карелия (10)</option> 
-									<option value="11" data-val1="_" data-val2="_">Республика КОМИ (11)</option> 
-									<option value="12" data-val1="_" data-val2="_">Марийская Республика  (12)</option> 
-									<option value="13" data-val1="_" data-val2="_">Республика Мордовия (13)</option> 
-									<option value="14" data-val1="_" data-val2="_">Республика Якутия (14)</option> 
-									<option value="15" data-val1="_" data-val2="_">Республика Северная Осетия-Алания (15)</option> 
-									<option value="16" data-val1="_" data-val2="_">Республика Татария (16)</option> 
-									<option value="17" data-val1="_" data-val2="_">Республика Тува (17)</option> 
-									<option value="18" data-val1="_" data-val2="_">Республика Удмуртия (18)</option> 
-									<option value="19" data-val1="_" data-val2="_">Республика Хакасия (19)</option> 
-									<option value="20" data-val1="0.7" data-val2="0.5">Чеченская Республика (20)</option> 
-									<option value="21" data-val1="_" data-val2="_">Чувашская Республика (21)</option> 
-									<option value="22" data-val1="_" data-val2="_">Алтайский край (22)</option> 
-									<option value="23" data-val1="_" data-val2="_">Краснодарский край (23)</option> 
-									<option value="24" data-val1="_" data-val2="_">Красноярский край (24)</option> 
-									<option value="25" data-val1="_" data-val2="_">Приморский край (25)</option> 
-									<option value="26" data-val1="_" data-val2="_">Ставропольский край (26)</option> 
-									<option value="27" data-val1="_" data-val2="_">Хабаровский край (27)</option> 
-									<option value="28" data-val1="_" data-val2="_">Амурская область (28)</option> 
-									<option value="29" data-val1="_" data-val2="_">Архангельская область (29)</option> 
-									<option value="30" data-val1="_" data-val2="_">Астраханская область (30)</option> 
-									<option value="31" data-val1="_" data-val2="_">Белгородская область (31)</option> 
-									<option value="32" data-val1="_" data-val2="_">Брянская область (32)</option> 
-									<option value="33" data-val1="_" data-val2="_">Владимирская область (33)</option> 
-									<option value="34" data-val1="_" data-val2="_">Волгоградская область (34)</option> 
-									<option value="35" data-val1="_" data-val2="_">Вологодская область (35)</option> 
-									<option value="37" data-val1="_" data-val2="_">Ивановская область (37)</option> 
-									<option value="38" data-val1="_" data-val2="_">Иркутская область (38)</option> 
-									<option value="39" data-val1="_" data-val2="_">Калининградская область (39)</option> 
-									<option value="40" data-val1="_" data-val2="_">Калужская область (40)</option> 
-									<option value="41" data-val1="_" data-val2="_">Камчатская область (41)</option> 
-									<option value="42" data-val1="_" data-val2="_">Кемеровская область (42)</option> 
-									<option value="43" data-val1="_" data-val2="_">Кировская область (43)</option> 
-									<option value="44" data-val1="_" data-val2="_">Костромская область (44)</option> 
-									<option value="45" data-val1="_" data-val2="_">Курганская область (45)</option> 
-									<option value="46" data-val1="_" data-val2="_">Курская область (46)</option> 
-									<option value="48" data-val1="_" data-val2="_">Липецкая область (48)</option> 
-									<option value="49" data-val1="_" data-val2="_">Магаданская область (49)</option> 
-									<option value="51" data-val1="_" data-val2="_">Мурманская область (51)</option> 
-									<option value="52" data-val1="_" data-val2="_">Нижегородская область (52)</option> 
-									<option value="53" data-val1="_" data-val2="_">Новгородская область (53)</option> 
-									<option value="54" data-val1="_" data-val2="_">Новосибирская область (54)</option> 
-									<option value="55" data-val1="_" data-val2="_">Омская область (55)</option> 
-									<option value="56" data-val1="_" data-val2="_">Оренбургская область (56)</option> 
-									<option value="57" data-val1="_" data-val2="_">Орловская область (57)</option> 
-									<option value="58" data-val1="_" data-val2="_">Пензенская область (58)</option> 
-									<option value="59" data-val1="_" data-val2="_">Пермская область (59)</option> 
-									<option value="60" data-val1="_" data-val2="_">Псковская область (60)</option> 
-									<option value="61" data-val1="_" data-val2="_">Ростовская область (61)</option> 
-									<option value="62" data-val1="_" data-val2="_">Рязанская область (62)</option> 
-									<option value="63" data-val1="_" data-val2="_">Самарская область (63)</option> 
-									<option value="64" data-val1="_" data-val2="_">Саратовская область (64)</option> 
-									<option value="65" data-val1="_" data-val2="_">Сахалинская область (65)</option> 
-									<option value="66" data-val1="_" data-val2="_">Свердловская область (66)</option> 
-									<option value="67" data-val1="_" data-val2="_">Смоленская область (67)</option> 
-									<option value="68" data-val1="_" data-val2="_">Тамбовская область (68)</option> 
-									<option value="69" data-val1="_" data-val2="_">Тверская область (69)</option> 
-									<option value="70" data-val1="_" data-val2="_">Томская область (70)</option> 
-									<option value="71" data-val1="_" data-val2="_">Тульская область (71)</option> 
-									<option value="72" data-val1="_" data-val2="_">Тюменская область (72)</option> 
-									<option value="73" data-val1="_" data-val2="_">Ульяновская область (73)</option> 
-									<option value="74" data-val1="_" data-val2="_">Челябинская область (74)</option> 
-									<option value="75" data-val1="_" data-val2="_">Читинская область (75)</option> 
-									<option value="76" data-val1="_" data-val2="_">Ярославская область (76)</option> 
-									<option value="79" data-val1="_" data-val2="_">Еврейская автономная область (79)</option> 
-									<option value="80" data-val1="0.55" data-val2="0.5">Агинский Бурятский автономный (80)</option> 
-									<option value="81" data-val1="0.85" data-val2="0.5">Коми-Пермяцкий автономный округ (81)</option> 
-									<option value="82" data-val1="0.55" data-val2="0.5">Корякский автономный округ (82)</option> 
-									<option value="83" data-val1="0.8" data-val2="0.5">Ненецкий автономный округ (83)</option> 
-									<option value="84" data-val1="0.55" data-val2="0.5">Таймырский автономный округ (84)</option> 
-									<option value="85" data-val1="1" data-val2="0.8">Усть-Ордынский автономный округ (85)</option> 
-									<option value="86" data-val1="_" data-val2="_">Ханты-Мансийский автономный округ (86)</option> 
-									<option value="87" data-val1="0.7" data-val2="0.5">Чукотский автономный округ (87)</option> 
-									<option value="88" data-val1="_" data-val2="_">Эвенский автономный округ (88)</option> 
-									<option value="89" data-val1="_" data-val2="_">Ямало-Ненецкий автономный округ  (89)</option> 
-									<option value="-" data-val1="_" data-val2="_">Иностранный гражданин  (-)</option> 
-								</select>
+								<p>
+									<label for="mesto_register">Место регистрации собственника:</label>
+									<select class="turnintodropdown" name="mesto_register" id="mesto_register">
+										<option value="36" data-val1="_" data-val2="_">Воронежская область (36)</option> 
+										<option value="50" data-val1="1.7" data-val2="1">Московская область (50)</option> 
+										<option value="77" data-val1="2" data-val2="1.2">Москва (77, 99, 177, 199)</option>
+										<option value="78" data-val1="1.8" data-val2="1">Санкт-Петербург (78, 178)</option>
+										<option value="47" data-val1="1.6" data-val2="1">Ленинградская область (47)</option>
+										<option value="1" data-val1="1.1" data-val2="0.8">Республика Адыгея (1)</option> 
+										<option value="2" data-val1="_" data-val2="_">Республика Башкирия (2)</option> 
+										<option value="3" data-val1="_" data-val2="_">Республика Бурятия (3)</option> 
+										<option value="4" data-val1="_" data-val2="_">Республика Алтай (4)</option> 
+										<option value="5" data-val1="_" data-val2="_">Республика Дагестан (5)</option> 
+										<option value="6" data-val1="_" data-val2="_">Республика Ингушетия (6)</option> 
+										<option value="7" data-val1="_" data-val2="_">Кабардино-Балкарская Республика (7)</option> 
+										<option value="8" data-val1="_" data-val2="_">Республика Калмыкия (8)</option> 
+										<option value="9" data-val1="1" data-val2="0.8">Карачаево-черкесская Республика (9)</option> 
+										<option value="10" data-val1="_" data-val2="_">Республика Карелия (10)</option> 
+										<option value="11" data-val1="_" data-val2="_">Республика КОМИ (11)</option> 
+										<option value="12" data-val1="_" data-val2="_">Марийская Республика  (12)</option> 
+										<option value="13" data-val1="_" data-val2="_">Республика Мордовия (13)</option> 
+										<option value="14" data-val1="_" data-val2="_">Республика Якутия (14)</option> 
+										<option value="15" data-val1="_" data-val2="_">Республика Северная Осетия-Алания (15)</option> 
+										<option value="16" data-val1="_" data-val2="_">Республика Татария (16)</option> 
+										<option value="17" data-val1="_" data-val2="_">Республика Тува (17)</option> 
+										<option value="18" data-val1="_" data-val2="_">Республика Удмуртия (18)</option> 
+										<option value="19" data-val1="_" data-val2="_">Республика Хакасия (19)</option> 
+										<option value="20" data-val1="0.7" data-val2="0.5">Чеченская Республика (20)</option> 
+										<option value="21" data-val1="_" data-val2="_">Чувашская Республика (21)</option> 
+										<option value="22" data-val1="_" data-val2="_">Алтайский край (22)</option> 
+										<option value="23" data-val1="_" data-val2="_">Краснодарский край (23)</option> 
+										<option value="24" data-val1="_" data-val2="_">Красноярский край (24)</option> 
+										<option value="25" data-val1="_" data-val2="_">Приморский край (25)</option> 
+										<option value="26" data-val1="_" data-val2="_">Ставропольский край (26)</option> 
+										<option value="27" data-val1="_" data-val2="_">Хабаровский край (27)</option> 
+										<option value="28" data-val1="_" data-val2="_">Амурская область (28)</option> 
+										<option value="29" data-val1="_" data-val2="_">Архангельская область (29)</option> 
+										<option value="30" data-val1="_" data-val2="_">Астраханская область (30)</option> 
+										<option value="31" data-val1="_" data-val2="_">Белгородская область (31)</option> 
+										<option value="32" data-val1="_" data-val2="_">Брянская область (32)</option> 
+										<option value="33" data-val1="_" data-val2="_">Владимирская область (33)</option> 
+										<option value="34" data-val1="_" data-val2="_">Волгоградская область (34)</option> 
+										<option value="35" data-val1="_" data-val2="_">Вологодская область (35)</option> 
+										<option value="37" data-val1="_" data-val2="_">Ивановская область (37)</option> 
+										<option value="38" data-val1="_" data-val2="_">Иркутская область (38)</option> 
+										<option value="39" data-val1="_" data-val2="_">Калининградская область (39)</option> 
+										<option value="40" data-val1="_" data-val2="_">Калужская область (40)</option> 
+										<option value="41" data-val1="_" data-val2="_">Камчатская область (41)</option> 
+										<option value="42" data-val1="_" data-val2="_">Кемеровская область (42)</option> 
+										<option value="43" data-val1="_" data-val2="_">Кировская область (43)</option> 
+										<option value="44" data-val1="_" data-val2="_">Костромская область (44)</option> 
+										<option value="45" data-val1="_" data-val2="_">Курганская область (45)</option> 
+										<option value="46" data-val1="_" data-val2="_">Курская область (46)</option> 
+										<option value="48" data-val1="_" data-val2="_">Липецкая область (48)</option> 
+										<option value="49" data-val1="_" data-val2="_">Магаданская область (49)</option> 
+										<option value="51" data-val1="_" data-val2="_">Мурманская область (51)</option> 
+										<option value="52" data-val1="_" data-val2="_">Нижегородская область (52)</option> 
+										<option value="53" data-val1="_" data-val2="_">Новгородская область (53)</option> 
+										<option value="54" data-val1="_" data-val2="_">Новосибирская область (54)</option> 
+										<option value="55" data-val1="_" data-val2="_">Омская область (55)</option> 
+										<option value="56" data-val1="_" data-val2="_">Оренбургская область (56)</option> 
+										<option value="57" data-val1="_" data-val2="_">Орловская область (57)</option> 
+										<option value="58" data-val1="_" data-val2="_">Пензенская область (58)</option> 
+										<option value="59" data-val1="_" data-val2="_">Пермская область (59)</option> 
+										<option value="60" data-val1="_" data-val2="_">Псковская область (60)</option> 
+										<option value="61" data-val1="_" data-val2="_">Ростовская область (61)</option> 
+										<option value="62" data-val1="_" data-val2="_">Рязанская область (62)</option> 
+										<option value="63" data-val1="_" data-val2="_">Самарская область (63)</option> 
+										<option value="64" data-val1="_" data-val2="_">Саратовская область (64)</option> 
+										<option value="65" data-val1="_" data-val2="_">Сахалинская область (65)</option> 
+										<option value="66" data-val1="_" data-val2="_">Свердловская область (66)</option> 
+										<option value="67" data-val1="_" data-val2="_">Смоленская область (67)</option> 
+										<option value="68" data-val1="_" data-val2="_">Тамбовская область (68)</option> 
+										<option value="69" data-val1="_" data-val2="_">Тверская область (69)</option> 
+										<option value="70" data-val1="_" data-val2="_">Томская область (70)</option> 
+										<option value="71" data-val1="_" data-val2="_">Тульская область (71)</option> 
+										<option value="72" data-val1="_" data-val2="_">Тюменская область (72)</option> 
+										<option value="73" data-val1="_" data-val2="_">Ульяновская область (73)</option> 
+										<option value="74" data-val1="_" data-val2="_">Челябинская область (74)</option> 
+										<option value="75" data-val1="_" data-val2="_">Читинская область (75)</option> 
+										<option value="76" data-val1="_" data-val2="_">Ярославская область (76)</option> 
+										<option value="79" data-val1="_" data-val2="_">Еврейская автономная область (79)</option> 
+										<option value="80" data-val1="0.55" data-val2="0.5">Агинский Бурятский автономный (80)</option> 
+										<option value="81" data-val1="0.85" data-val2="0.5">Коми-Пермяцкий автономный округ (81)</option> 
+										<option value="82" data-val1="0.55" data-val2="0.5">Корякский автономный округ (82)</option> 
+										<option value="83" data-val1="0.8" data-val2="0.5">Ненецкий автономный округ (83)</option> 
+										<option value="84" data-val1="0.55" data-val2="0.5">Таймырский автономный округ (84)</option> 
+										<option value="85" data-val1="1" data-val2="0.8">Усть-Ордынский автономный округ (85)</option> 
+										<option value="86" data-val1="_" data-val2="_">Ханты-Мансийский автономный округ (86)</option> 
+										<option value="87" data-val1="0.7" data-val2="0.5">Чукотский автономный округ (87)</option> 
+										<option value="88" data-val1="_" data-val2="_">Эвенский автономный округ (88)</option> 
+										<option value="89" data-val1="_" data-val2="_">Ямало-Ненецкий автономный округ  (89)</option> 
+										<option value="-" data-val1="_" data-val2="_">Иностранный гражданин  (-)</option> 
+									</select>
+								</p>
 							</div>
 							<div class="input_container">
 								<label for="more_mesto_register"></label>
@@ -588,15 +594,17 @@
 							</div>
 							<div class="select_check_container">
 								<div class="input_container">
-									<label for="osago_power">Мощность двигателя (л.с.):</label>
-									<select name="osago_power" id="osago_power">
-										<option value="0" data-value="0.6">до 50 включительно (Км = 0.6)</option> 
-										<option value="1" data-value="1">свыше 50 до 70 включительно (Км = 1) </option> 
-										<option value="2" data-value="1.1">свыше 70 до 100 включительно (Км = 1.1) </option> 
-										<option value="3" data-value="1.2">свыше 100 до 120 включительно (Км = 1.2) </option> 
-										<option value="4" data-value="1.4">свыше 120 до 150 включительно (Км = 1.4) </option> 
-										<option value="5" data-value="1.6">свыше 150 (1.6) </option> 
-									</select>
+									<p>
+										<label for="osago_power">Мощность двигателя (л.с.):</label>
+										<select class="turnintodropdown" name="osago_power" id="osago_power">
+											<option value="0" data-value="0.6">до 50 включительно (Км = 0.6)</option> 
+											<option value="1" data-value="1">свыше 50 до 70 включительно (Км = 1) </option> 
+											<option value="2" data-value="1.1">свыше 70 до 100 включительно (Км = 1.1) </option> 
+											<option value="3" data-value="1.2">свыше 100 до 120 включительно (Км = 1.2) </option> 
+											<option value="4" data-value="1.4">свыше 120 до 150 включительно (Км = 1.4) </option> 
+											<option value="5" data-value="1.6">свыше 150 (1.6) </option> 
+										</select>
+									</p>
 								</div>
 								<div class="check_container">
 									<div class="checkboxes">
@@ -628,7 +636,7 @@
 							<div class="radio_container">
 								<label for="osago_dopusk">Лица, допущенные к управлению:</label>
 								<div class="radioblock">
-									<div class="radio">С ограничениями</div>
+									<div class="radio active">С ограничениями</div>
 									<div class="radio">Без ограничений</div>
 									<input type="hidden" name="osago_dopusk" id="osago_dopusk"/>
 								</div>
@@ -670,19 +678,17 @@
 								<label for="">Ваше имя (полностью):</label>
 								<input type="text" placeholder="Ф.И.О.">
 							</div>
-							<div class="double_input">
-								<div class="input_container">
-									<label for="">Ваш телефон:</label>
-									<input type="text" placeholder="+7(123)456-78-90">
-								</div>
-								<div class="input_container">
-									<label for="">Ваш e-mail адрес:</label>
-									<input type="email" placeholder="mail@mail.ru">
-								</div>
+							<div class="input_container">
+								<label for="">Ваш телефон:</label>
+								<input type="text" placeholder="+7(123)456-78-90">
+							</div>
+							<div class="input_container">
+								<label for="">Ваш e-mail адрес:</label>
+								<input type="email" placeholder="mail@mail.ru">
 							</div>
 							<h2>
 								Необходимо загрузить документы для оформления<br>
-									полиса ОСАГО
+								полиса ОСАГО
 							</h2>
 							<div class="upload_container">
 								<div class="upload_title">
@@ -732,7 +738,37 @@
 								</div>
 							</div>
 						</div>
-						<div class="content_slide">Практический опыт показывает, что рамки и место обучения кадров...</div>
+						<div class="content_slide">Пропущенный слайд</div>
+						<div class="content_slide">
+							<p class="result">
+								Стоимость  полиса ОСАГО 
+								+ (1000 рублей за услуги) 
+								по предварительному расчёту составит: <span>3471</span> рублей
+							</p>
+							<p class="result">
+								Стоимость  полиса ОСАГО с оформлением диагностической карты + (1000 рублей за услуги) 
+								по предварительному расчёту составит: <span>4171</span> рублей
+							</p>
+							<p class="result">
+								ВНИМАНИЕ! Итоговая стоимость полиса может незначительно отличаться от расчитанной стоимости  на сайте т.к. тарифы в разных страховых компаниях отличаются!
+							</p>
+							<div class="input_container">
+								<label for="">Выберете способ получения полиса:</label>
+								<select name="" id="">
+									<option value="1">На электронную почту</option> 
+									<option value="2">Самовывоз</option> 
+								</select>
+							</div>
+							<div class="check_container">
+								<div class="checkboxes">
+									<div class="check">
+											Оформляя заявку на покупку страхового полиса, 
+											Вы даёте согласие на обработку Ваших персональных.
+										<input type="checkbox" value="0" id="" />
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 				<nav id="osago_step_1_nav" class="osago_bottom_nav">
@@ -748,16 +784,21 @@
 				<nav id="osago_step_3_nav" class="osago_bottom_nav">
 					<button type="button" id="step3_back" class="calc_left_arrow"></button>
 					<button type="button" id="step3_go1" class="calc_center_button">Далее</button>
-					<button type="button" id="step3_go1" class="calc_right_arrow"></button>
+					<button type="button" id="step3_go2" class="calc_right_arrow"></button>
 				</nav>
 				<nav id="osago_step_4_nav" class="osago_bottom_nav">
 					<button type="button" id="step4_back" class="calc_left_arrow"></button>
 					<button type="button" id="step4_go1" class="calc_center_button">Далее</button>
-					<button type="button" id="step4_go1" class="calc_right_arrow"></button>
+					<button type="button" id="step4_go2" class="calc_right_arrow"></button>
 				</nav>
 				<nav id="osago_step_5_nav" class="osago_bottom_nav">
-					<button type="button" id="step5_back" class="calc_left_arrow"></button>
-					<button id="step5_go1" type="submit" class="calc_center_button">Отправить заявку</button>
+						<button type="button" id="step5_back" class="calc_left_arrow"></button>
+						<button type="button" id="step5_go1" class="calc_center_button">Далее</button>
+						<button type="button" id="step5_go2" class="calc_right_arrow"></button>
+				</nav>
+				<nav id="osago_step_6_nav" class="osago_bottom_nav">
+					<button type="button" id="step6_back" class="calc_left_arrow"></button>
+					<button id="step6_go1" type="submit" class="calc_center_button">Отправить заявку</button>
 					<div></div>
 				</nav>
 			</form>

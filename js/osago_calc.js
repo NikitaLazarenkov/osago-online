@@ -76,6 +76,22 @@ jQuery(document).ready(function($) {
         $('#osago_step_4_nav').css({'display' : 'flex'});
         $('.calc_sliders_container').css({'left' : 'calc(-300% - 75px'});
     });
+    //  Переход с 5 слайдера на 6
+    $('#step5_go1, #step5_go2').click(function () {
+        $('#nav_position_5').removeClass('active');
+        $('#nav_position_6').addClass('active');
+        $('#osago_step_5_nav').hide();
+        $('#osago_step_6_nav').css({'display' : 'flex'});
+        $('.calc_sliders_container').css({'left' : 'calc(-500% - 125px'});
+    });
+    //  Переход с 6 слайдера на 5
+    $('#step6_back').click(function () {
+        $('#nav_position_6').removeClass('active');
+        $('#nav_position_5').addClass('active');
+        $('#osago_step_6_nav').hide();
+        $('#osago_step_5_nav').css({'display' : 'flex'});
+        $('.calc_sliders_container').css({'left' : 'calc(-400% - 100px'});
+    });
 
     /*$('.check_position').click(function () {
 
