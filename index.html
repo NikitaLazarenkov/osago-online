@@ -35,15 +35,14 @@
 						<div class="content_slide">
 							<div class="input_container">
 								<label for="owner">Владелец:</label>
-								<select class="turnintodropdown" name="owner" id="owner">
+								<select name="owner" id="owner">
 									<option value="1">Физическое лицо</option>
 									<option value="2">Юридическое лицо</option>
 								</select>
 							</div>
 							<div class="input_container">
 								<label for="mesto_register">Место регистрации собственника:</label>
-								<select class="turnintodropdown" name="mesto_register" id="mesto_register">
-									<option value="36" data-val1="_" data-val2="_">Воронежская область (36)</option> 
+								<select name="mesto_register" id="mesto_register">
 									<option value="50" data-val1="1.7" data-val2="1">Московская область (50)</option> 
 									<option value="77" data-val1="2" data-val2="1.2">Москва (77, 99, 177, 199)</option>
 									<option value="78" data-val1="1.8" data-val2="1">Санкт-Петербург (78, 178)</option>
@@ -83,6 +82,7 @@
 									<option value="33" data-val1="_" data-val2="_">Владимирская область (33)</option> 
 									<option value="34" data-val1="_" data-val2="_">Волгоградская область (34)</option> 
 									<option value="35" data-val1="_" data-val2="_">Вологодская область (35)</option> 
+									<option value="36" data-val1="_" data-val2="_">Воронежская область (36)</option> 
 									<option value="37" data-val1="_" data-val2="_">Ивановская область (37)</option> 
 									<option value="38" data-val1="_" data-val2="_">Иркутская область (38)</option> 
 									<option value="39" data-val1="_" data-val2="_">Калининградская область (39)</option> 
@@ -137,7 +137,7 @@
 							</div>
 							<div class="input_container">
 								<label for="more_mesto_register"></label>
-								<select name="more_mesto_register" id="more_mesto_register">
+								<select disabled name="more_mesto_register" id="more_mesto_register">
 									<option value="0" data-chained="85 84 83 82 81 80 20 9 50 77 78 47 1 87">---</option>
 
 									<option value="9" data-val1="1.8" data-val2="1" data-chained="2">Уфа (2)</option> 
@@ -570,35 +570,35 @@
 									<option value="tramvai" data-val1="2101">Трамвай</option>
 									<option value="trolleibus" data-val1="3370">Троллейбус</option>
 									<option value="traktor" data-val1="1579">Трактор, самоходная дорожно-строительная или проч.</option>
-									<option value="pritsep">Прицеп</option>
+									<!--<option value="pritsep">Прицеп</option>-->
 								</select>
 							</div>
 							<div class="input_container">
 								<select name="more_type" id="more_type">
 									<option value="0" data-chained="a tramvai trolleibus traktor">---</option>
-									<option value="1" data-val1="4118" data-val2="3087" data-chained="b">Для личного использования</option> 
+									<option value="1" data-val1="3087" data-val2="4118" data-chained="b">Для личного использования</option> 
 									<option value="2" data-val1="6166" data-val2="6166" data-chained="b">Используемый в качестве такси</option> 
-									<option value="3" data-val1="4211" data-val2="4211" data-chained="c">С разрешенной максимальной массой 16 тонн и менее</option>
-									<option value="4" data-val1="6341" data-val2="6341" data-chained="c">С разрешенной максимальной массой более 16 тонн</option>
-									<option value="5" data-val1="6166" data-val2="6166" data-chained="d">Используемый в качестве такси</option> 
-									<option value="6" data-val1="3370" data-val2="3370" data-chained="d">С числом мест сидения до 16 (включительно)</option> 
-									<option value="7" data-val1="4211" data-val2="4211" data-chained="d">С числом мест сидения свыше 16</option>
-									<option value="8" data-val1="810" data-val2="810" data-chained="pritsep">К грузовым автомобилям, полуприцепы, прицепы-роспуски</option> 
+									<option value="3" data-val1="4211" data-chained="c">С разрешенной максимальной массой 16 тонн и менее</option>
+									<option value="4" data-val1="6341" data-chained="c">С разрешенной максимальной массой более 16 тонн</option>
+									<option value="5" data-val1="6166" data-chained="d">Используемый в качестве такси</option> 
+									<option value="6" data-val1="3370" data-chained="d">С числом мест сидения до 16 (включительно)</option> 
+									<option value="7" data-val1="4211" data-chained="d">С числом мест сидения свыше 16</option>
+									<!--<option value="8" data-val1="810" data-val2="810" data-chained="pritsep">К грузовым автомобилям, полуприцепы, прицепы-роспуски</option> 
 									<option value="9" data-val1="395" data-val2="395" data-chained="pritsep">К легковым автомобилям (юр. лица), мотоциклам, мотороллерам</option> 
-									<option value="10" data-val1="305" data-val2="305" data-chained="pritsep">К тракторам, самоходным дорожно-строительным и иным машинам</option> 
+									<option value="10" data-val1="305" data-val2="305" data-chained="pritsep">К тракторам, самоходным дорожно-строительным и иным машинам</option>-->
 								</select>
 							</div>
 							<div class="select_check_container">
 								<div class="input_container">
 									<p>
 										<label for="osago_power">Мощность двигателя (л.с.):</label>
-										<select class="turnintodropdown" name="osago_power" id="osago_power">
-											<option value="0" data-value="0.6">до 50 включительно (Км = 0.6)</option> 
-											<option value="1" data-value="1">свыше 50 до 70 включительно (Км = 1) </option> 
-											<option value="2" data-value="1.1">свыше 70 до 100 включительно (Км = 1.1) </option> 
-											<option value="3" data-value="1.2">свыше 100 до 120 включительно (Км = 1.2) </option> 
-											<option value="4" data-value="1.4">свыше 120 до 150 включительно (Км = 1.4) </option> 
-											<option value="5" data-value="1.6">свыше 150 (1.6) </option> 
+										<select name="osago_power" id="osago_power">
+											<option value="0.6">до 50 включительно (Км = 0.6)</option> 
+											<option value="1">свыше 50 до 70 включительно (Км = 1) </option> 
+											<option value="1.1">свыше 70 до 100 включительно (Км = 1.1) </option> 
+											<option value="1.2">свыше 100 до 120 включительно (Км = 1.2) </option> 
+											<option value="1.4">свыше 120 до 150 включительно (Км = 1.4) </option> 
+											<option value="1.6">свыше 150 (1.6) </option> 
 										</select>
 									</p>
 								</div>
@@ -606,7 +606,7 @@
 									<div class="checkboxes">
 										<div class="check">
 											Прицеп
-											<input type="checkbox" value="0" id="osago_pritsep" />
+											<input type="checkbox" id="osago_pritsep" />
 										</div>
 									</div>
 								</div>
@@ -614,73 +614,75 @@
 						</div>
 						<div class="content_slide">
 							<div class="input_container">
-								<label for="osago_staj">Срок страхования (период использования автомоблиля):</label>
-								<select name="osago_staj" id="osago_staj">
-									<option value="0" data-value="1">1 год</option> 
-									<option value="1" data-value="0.95">9 месяцев (Кс = 0.95)</option> 
-									<option value="2" data-value="0.9">8 месяцев (Кс = 0.9)</option> 
-									<option value="3" data-value="0.8">7 месяцев (Кс = 0.8)</option> 
-									<option value="4" data-value="0.7">6 месяцев (Кс = 0.7)</option> 
-									<option value="5" data-value="0.65">5 месяцев (Кс = 0.65)</option> 
-									<option value="6" data-value="0.6">4 месяца (Кс = 0.6)</option>
-									<option value="7" data-value="0.5">3 месяца (Кс = 0.5)</option>
-									<option value="8" data-value="0.4">2 месяца (Кс = 0.4)</option>
-									<option value="9" data-value="0.3">от 16 дней до 1 месяца (Кс = 0.3)</option>
-									<option value="10" data-value="0.2">от 5 до 15 дней (Кс = 0.2)</option>
+								<label for="osago_srok">Срок страхования (период использования автомоблиля):</label>
+								<select name="osago_srok" id="osago_srok">
+									<option value="1" data-chained="2">для физических лиц</option>
+									<option value="1" data-chained="1">1 год</option> 
+									<option value="0.95" data-chained="1">9 месяцев (Кс = 0.95)</option> 
+									<option value="0.9" data-chained="1">8 месяцев (Кс = 0.9)</option> 
+									<option value="0.8" data-chained="1">7 месяцев (Кс = 0.8)</option> 
+									<option value="0.7" data-chained="1">6 месяцев (Кс = 0.7)</option> 
+									<option value="0.65" data-chained="1">5 месяцев (Кс = 0.65)</option> 
+									<option value="0.6" data-chained="1">4 месяца (Кс = 0.6)</option>
+									<option value="0.5" data-chained="1">3 месяца (Кс = 0.5)</option>
+									<option value="0.4" data-chained="1">2 месяца (Кс = 0.4)</option>
+									<option value="0.3" data-chained="1">от 16 дней до 1 месяца (Кс = 0.3)</option>
+									<option value="0.2" data-chained="1">от 5 до 15 дней (Кс = 0.2)</option>
 								</select>
 							</div>
-							<div class="radio_container">
-								<label for="osago_dopusk">Лица, допущенные к управлению:</label>
+							<div id="osago_dopusk_container" class="radio_container">
+								<label for="osago_dopusk" class="id1203">Лица, допущенные к управлению:</label>
 								<div class="radioblock">
-									<div class="radio active">С ограничениями</div>
-									<div class="radio">Без ограничений</div>
+									<div class="radio active osago_dopusk id1204">С ограничениями</div>
+									<div class="radio osago_dopusk id1205">Без ограничений</div>
 									<input type="hidden" name="osago_dopusk" id="osago_dopusk"/>
 								</div>
 							</div>
 							<div class="input_container">
 								<label for="osago_staj">Возраст и водительский стаж:</label>
 								<select name="osago_staj" id="osago_staj">
-									<option value="0" data-value="1">старше 22 лет, стаж свыше 3 лет (Квс = 1) </option>
-									<option value="1" data-value="1.7">старше 22 лет, стаж до 3 лет включительно (Квс = 1.7) </option>
-									<option value="2" data-value="1.6">до 22 лет включительно, стаж свыше 3 лет (Квс = 1.6) </option> 
-									<option value="3" data-value="1.8">до 22 лет включительно, стаж до 3 лет включительно (Квс = 1.8) </option> 
+									<option value="1" data-chained="2">для физических лиц</option>
+									<option value="1" data-chained="1">старше 22 лет, стаж свыше 3 лет (Квс = 1) </option>
+									<option value="1.7" data-chained="1">старше 22 лет, стаж до 3 лет включительно (Квс = 1.7) </option>
+									<option value="1.6" data-chained="1">до 22 лет включительно, стаж свыше 3 лет (Квс = 1.6) </option> 
+									<option value="1.8" data-chained="1">до 22 лет включительно, стаж до 3 лет включительно (Квс = 1.8) </option> 
 								</select>
 							</div>
 							<div class="input_container">
-								<label for="osago_staj">Скидка за безаварийную езду:</label>
-								<select name="osago_staj" id="osago_staj">
-									<option value="0" title="1">Страхование впервые (класс 3, кбм 1)</option> 
-									<option value="1" title="0.95">1 год без аварий (класс 4, кбм 0,95)</option> 
-									<option value="2" title="0.9">2 года без аварий (класс 5, кбм 0,9)</option> 
-									<option value="3" title="0.85">3 года без аварий (класс 6, кбм 0,85)</option> 
-									<option value="4" title="0.8">4 года без аварий (класс 7, кбм 0,8)</option> 
-									<option value="5" title="0.75">5 лет без аварий (класс 8, кбм 0,75)</option> 
-									<option value="6" title="0.7">6 лет без аварий (класс 9, кбм 0,7)</option> 
-									<option value="7" title="0.65">7 лет без аварий (класс 10, кбм 0,65)</option> 
-									<option value="8" title="0.6">8 лет без аварий (класс 11, кбм 0,6)</option> 
-									<option value="9" title="0.55">9 лет без аварий (класс 12, кбм 0,55)</option> 
-									<option value="10" title="0.5">10 лет без аварий(класс 13, кбм 0,5)</option>
-									<option value="11" title="2.45">(класс M, кбм 2,45)</option> 
-									<option value="12" title="2.3">(класс 0, кбм 2,3)</option> 
-									<option value="13" title="1.55">(класс 1, кбм 1,55)</option> 
-									<option value="14" title="1.4">(класс 2, кбм 1,4)</option> 
+								<label for="osago_kbm">Скидка за безаварийную езду:</label>
+								<select name="osago_kbm" id="osago_kbm">
+									<option value="1">Страхование впервые (класс 3, кбм 1)</option> 
+									<option value="0.95">1 год без аварий (класс 4, кбм 0,95)</option> 
+									<option value="0.9">2 года без аварий (класс 5, кбм 0,9)</option> 
+									<option value="0.85">3 года без аварий (класс 6, кбм 0,85)</option> 
+									<option value="0.8">4 года без аварий (класс 7, кбм 0,8)</option> 
+									<option value="0.75">5 лет без аварий (класс 8, кбм 0,75)</option> 
+									<option value="0.7">6 лет без аварий (класс 9, кбм 0,7)</option> 
+									<option value="0.65">7 лет без аварий (класс 10, кбм 0,65)</option> 
+									<option value="0.6">8 лет без аварий (класс 11, кбм 0,6)</option> 
+									<option value="0.55">9 лет без аварий (класс 12, кбм 0,55)</option> 
+									<option value="0.5">10 лет без аварий(класс 13, кбм 0,5)</option>
+									<option value="2.45">(класс M, кбм 2,45)</option> 
+									<option value="2.3">(класс 0, кбм 2,3)</option> 
+									<option value="1.55">(класс 1, кбм 1,55)</option> 
+									<option value="1.4">(класс 2, кбм 1,4)</option> 
 								</select>
 							</div>
-							<p>Стоимость полиса по<br>предварительному расчету составляет: <span>3242</span> рублей</p>
-							<p>Итого с оформлением полиса<br>ОСАГО (+ от 1000 рублей за услуги): <span>3471</span> рублей</p>
+							<p>Стоимость полиса по<br>предварительному расчету составляет: <span class="osago_summ">0</span> рублей</p>
+							<p>Итого с оформлением полиса<br>ОСАГО (+ от 1000 рублей за услуги): <span class="osago_summ2">0</span> рублей</p>
 						</div>
 						<div class="content_slide">
 							<div class="input_container">
-								<label for="">Ваше имя (полностью):</label>
-								<input type="text" placeholder="Ф.И.О.">
+								<label for="name">Ваше имя (полностью):</label>
+								<input type="text" placeholder="Ф.И.О." name="name" id="name">
 							</div>
 							<div class="input_container">
-								<label for="">Ваш телефон:</label>
-								<input type="text" placeholder="+7(123)456-78-90">
+								<label for="phone">Ваш телефон:</label>
+								<input type="text" placeholder="+7(123)456-78-90" name="phone" id="phone">
 							</div>
 							<div class="input_container">
-								<label for="">Ваш e-mail адрес:</label>
-								<input type="email" placeholder="mail@mail.ru">
+								<label for="email">Ваш e-mail адрес:</label>
+								<input type="email" placeholder="mail@mail.ru" name="email" id="email">
 							</div>
 							<h2>
 								Необходимо загрузить документы для оформления<br>
@@ -693,7 +695,7 @@
 								<div class="input_container">
 									<div class="upload_form">
 										<label>
-											<input name="file" type="file" class="main_input_file" multiple>
+											<input name="file1" type="file" class="main_input_file file_osago_passport" multiple>
 											<div>1-я страница паспорта и страница с регистрацией</div>
 											<input class="upload_block" type="text" id="osago_passport" value="Файл не выбран." disabled>
 										</label>
@@ -709,7 +711,7 @@
 								<div class="input_container">
 									<div class="upload_form">
 										<label>
-											<input name="file" type="file" class="main_input_file" multiple>
+											<input name="file2" type="file" class="main_input_file file_osago_sts" multiple>
 											<div>СТС или ПТС</div>
 											<input class="upload_block" type="text" id="osago_sts" value="Файл не выбран." disabled>
 										</label>
@@ -723,7 +725,7 @@
 								<div class="input_container">
 									<div class="upload_form">
 										<label>
-											<input name="file" type="file" class="main_input_file" multiple>
+											<input name="file3" type="file" class="main_input_file file_osago_vu" multiple>
 											<div>ВУ всех лиц допущенных к управлению</div>
 											<input class="upload_block" type="text" id="osago_vu" value="Файл не выбран." disabled>
 										</label>
@@ -737,7 +739,7 @@
 								<div class="input_container">
 									<div class="upload_form">
 										<label>
-											<input name="file" type="file" class="main_input_file" multiple>
+											<input name="file4" type="file" class="main_input_file file_osago_diagnostic" multiple>
 											<div>Диагностическая карта ТС</div>
 											<input class="upload_block" type="text" id="osago_diagnostic" value="Файл не выбран." disabled>
 										</label>
@@ -746,10 +748,10 @@
 							</div>
 							<div class="check_container">
 								<div class="checkboxes">
-									<div class="check">
+									<div class="check id1323">
 											Если у Вас отсутствует диагностическая карта и 
 											Вам нужно её оформить, поставьте отметку здесь:
-										<input type="checkbox" value="0" id="" />
+										<input type="checkbox" id="osago_have_diagnostic" />
 									</div>
 								</div>
 							</div>
@@ -765,16 +767,16 @@
 								заполните поля ниже
 							</h2>
 							<div class="input_container">
-								<label for="">Марка шин Вашего ТС:</label>
-								<input type="text" placeholder="Pirelli Ice Zerro 195/65/15">
+								<label for="diagmostic_tires">Марка шин Вашего ТС:</label>
+								<input type="text" placeholder="Pirelli Ice Zerro 195/65/15" name="diagmostic_tires" id="diagmostic_tires">
 							</div>
 							<div class="input_container">
 								<label for="">Пробег ТС:</label>
-								<input type="text" placeholder="35000 км">
+								<input type="text" placeholder="35000 км" name="diagmostic_probeg" id="diagmostic_probeg">
 							</div>
 							<div class="input_container">
-								<label for="">Тип двигателя:</label>
-								<select name="" id="">
+								<label for="engine_type">Тип двигателя:</label>
+								<select name="engine_type" id="engine_type">
 									<option value="0">---</option> 
 									<option value="1">Бензин</option> 
 									<option value="2">Дизельное топливо</option>
@@ -788,18 +790,18 @@
 							<p class="result">
 								Стоимость  полиса ОСАГО 
 								+ (1000 рублей за услуги) 
-								по предварительному расчёту составит: <span>3471</span> рублей
+								по предварительному расчёту составит: <span class="osago_summ2"></span> рублей
 							</p>
-							<p class="result">
+							<p id="p_result_diagnistic" class="result">
 								Стоимость  полиса ОСАГО с оформлением диагностической карты + (1000 рублей за услуги) 
-								по предварительному расчёту составит: <span>4171</span> рублей
+								по предварительному расчёту составит: <span class="osago_summ3">0</span> рублей
 							</p>
 							<p class="result">
 								ВНИМАНИЕ! Итоговая стоимость полиса может незначительно отличаться от расчитанной стоимости  на сайте т.к. тарифы в разных страховых компаниях отличаются!
 							</p>
 							<div class="input_container">
-								<label for="">Выберете способ получения полиса:</label>
-								<select name="" id="">
+								<label for="osago_dostavka">Выберете способ получения полиса:</label>
+								<select name="osago_dostavka" id="osago_dostavka">
 									<option value="1">На электронную почту</option> 
 									<option value="2">Самовывоз</option> 
 								</select>
@@ -809,7 +811,7 @@
 									<div class="check">
 											Оформляя заявку на покупку страхового полиса, 
 											Вы даёте согласие на обработку Ваших персональных.
-										<input type="checkbox" value="0" id="" />
+										<input type="checkbox" id="osago_soglasie" name="osago_soglasie" />
 									</div>
 								</div>
 							</div>
@@ -852,12 +854,16 @@
 			</form>
 		</section>
 	</div>
-	<script src="/js/osago_calc.js"></script>
+
 	<script src="./js/jquery.chained.js"></script>
+	<script src="/js/osago_calc.js"></script>
+	
 
 	<script>
-			$("#more_type").chained("#transport_type");
-			$("#more_mesto_register").chained("#mesto_register");
-		</script>
+		$("#more_type").chained("#transport_type");
+		$("#more_mesto_register").chained("#mesto_register");
+		$("#osago_staj").chained("#owner");
+		$("#osago_srok").chained("#owner");
+	</script>
 </body>
 </html>
