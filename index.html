@@ -7,6 +7,7 @@
 		<title>Расчет стоимости ОСАГО</title>
 		<link rel="stylesheet" href="/css/osago_calc.css">
 		<link rel="stylesheet" href="/css/fonts.css">
+		<link href="http://allfont.ru/allfont.css?fonts=a_futuraorto" rel="stylesheet" type="text/css" />
 		<!--<link rel="stylesheet" href="/css/generic.css">-->
 		<script src="/js/jquery-3.2.1.js"></script>
 </head>
@@ -18,15 +19,32 @@
 		</nav>
 		<section class="calc_container">
 			<form id="osago_calc" class="osago_calc">
+				<input type="hidden" name="send_owner" id="send_owner">
+				<input type="hidden" name="send_mesto_register" id="send_mesto_register">
+				<input type="hidden" name="send_more_mesto_register" id="send_more_mesto_register">
+				<input type="hidden" name="send_transport_type" id="send_transport_type">
+				<input type="hidden" name="send_more_type" id="send_more_type">
+				<input type="hidden" name="send_power" id="send_power">
+				<input type="hidden" name="Прицеп" id="send_pritsep">
+				<input type="hidden" name="send_staj" id="send_staj">
+				<input type="hidden" name="send_srok" id="send_srok">
+				<input type="hidden" name="send_kbm" id="send_kbm">
+				<input type="hidden" name="send_dopusk" id="send_dopusk">
+				<input type="hidden" name="send_summ1" id="send_summ1">
+				<input type="hidden" name="send_summ2" id="send_summ2">
+				<input type="hidden" name="send_summ3" id="send_summ3">
+				<input type="hidden" name="send_diagnostic" id="send_diagnostic">
+				<input type="hidden" name="send_dostavka" id="send_dostavka">
+
 				<h1>Калькулятор ОСАГО</h1>
 				<button type="button" class="calc_close_button"></button>
 				<nav class="osago_nav_vision">
-					<div id="nav_position_1" class="osago_nav_vision_item active">1</div>
-					<div id="nav_position_2" class="osago_nav_vision_item">2</div>
-					<div id="nav_position_3" class="osago_nav_vision_item">3</div>
-					<div id="nav_position_4" class="osago_nav_vision_item">4</div>
-					<div id="nav_position_5" class="osago_nav_vision_item">5</div>
-					<div id="nav_position_6" class="osago_nav_vision_item">6</div>
+					<div id="nav_position_1" class="osago_nav_vision_item active"><span>1</span></div>
+					<div id="nav_position_2" class="osago_nav_vision_item"><span>2</span></div>
+					<div id="nav_position_3" class="osago_nav_vision_item"><span>3</span></div>
+					<div id="nav_position_4" class="osago_nav_vision_item"><span>4</span></div>
+					<div id="nav_position_5" class="osago_nav_vision_item"><span>5</span></div>
+					<div id="nav_position_6" class="osago_nav_vision_item"><span>6</span></div>
 					<div class="osago_nav_vision_slider"></div>
 				</nav>
 				<div class="nav_vision_line"></div>
@@ -674,15 +692,15 @@
 						<div class="content_slide">
 							<div class="input_container">
 								<label for="name">Ваше имя (полностью):</label>
-								<input type="text" placeholder="Ф.И.О." name="name" id="name">
+								<input type="text" placeholder="Ф.И.О." name="name" id="name" value="" required>
 							</div>
 							<div class="input_container">
 								<label for="phone">Ваш телефон:</label>
-								<input type="text" placeholder="+7(123)456-78-90" name="phone" id="phone">
+								<input type="text" placeholder="+7(123)456-78-90" name="phone" id="phone" value="" required>
 							</div>
 							<div class="input_container">
 								<label for="email">Ваш e-mail адрес:</label>
-								<input type="email" placeholder="mail@mail.ru" name="email" id="email">
+								<input type="email" placeholder="mail@mail.ru" name="email" id="email" value="" required>
 							</div>
 							<h2>
 								Необходимо загрузить документы для оформления<br>
@@ -695,7 +713,7 @@
 								<div class="input_container">
 									<div class="upload_form">
 										<label>
-											<input name="file1" type="file" class="main_input_file file_osago_passport" multiple>
+											<input name="file1" type="file" class="main_input_file file_osago_passport" id="osago_file_passport" value="" multiple>
 											<div>1-я страница паспорта и страница с регистрацией</div>
 											<input class="upload_block" type="text" id="osago_passport" value="Файл не выбран." disabled>
 										</label>
@@ -711,7 +729,7 @@
 								<div class="input_container">
 									<div class="upload_form">
 										<label>
-											<input name="file2" type="file" class="main_input_file file_osago_sts" multiple>
+											<input name="file2" type="file" class="main_input_file file_osago_sts" id="osago_file_sts" value="" multiple>
 											<div>СТС или ПТС</div>
 											<input class="upload_block" type="text" id="osago_sts" value="Файл не выбран." disabled>
 										</label>
@@ -725,7 +743,7 @@
 								<div class="input_container">
 									<div class="upload_form">
 										<label>
-											<input name="file3" type="file" class="main_input_file file_osago_vu" multiple>
+											<input name="file3" type="file" class="main_input_file file_osago_vu" id="osago_file_vu" value="" multiple>
 											<div>ВУ всех лиц допущенных к управлению</div>
 											<input class="upload_block" type="text" id="osago_vu" value="Файл не выбран." disabled>
 										</label>
@@ -739,7 +757,7 @@
 								<div class="input_container">
 									<div class="upload_form">
 										<label>
-											<input name="file4" type="file" class="main_input_file file_osago_diagnostic" multiple>
+											<input name="file4" type="file" class="main_input_file file_osago_diagnostic" id="osago_file_diagnostic" value="" multiple>
 											<div>Диагностическая карта ТС</div>
 											<input class="upload_block" type="text" id="osago_diagnostic" value="Файл не выбран." disabled>
 										</label>
@@ -767,22 +785,22 @@
 								заполните поля ниже
 							</h2>
 							<div class="input_container">
-								<label for="diagmostic_tires">Марка шин Вашего ТС:</label>
-								<input type="text" placeholder="Pirelli Ice Zerro 195/65/15" name="diagmostic_tires" id="diagmostic_tires">
+								<label for="diagnostic_tires">Марка шин Вашего ТС:</label>
+								<input type="text" placeholder="Pirelli Ice Zerro 195/65/15" name="diagnostic_tires" id="diagnostic_tires" value="">
 							</div>
 							<div class="input_container">
-								<label for="">Пробег ТС:</label>
-								<input type="text" placeholder="35000 км" name="diagmostic_probeg" id="diagmostic_probeg">
+								<label for="diagnostic_probeg">Пробег ТС:</label>
+								<input type="text" placeholder="35000 км" name="diagnostic_probeg" id="diagnostic_probeg" value="">
 							</div>
 							<div class="input_container">
 								<label for="engine_type">Тип двигателя:</label>
 								<select name="engine_type" id="engine_type">
 									<option value="0">---</option> 
-									<option value="1">Бензин</option> 
-									<option value="2">Дизельное топливо</option>
-									<option value="3">Сжатый газ</option> 
-									<option value="4">Сжиженный газ</option> 
-									<option value="5">Без топлива</option> 
+									<option value="Бензин">Бензин</option> 
+									<option value="Дизельное топливо">Дизельное топливо</option>
+									<option value="Сжатый газ">Сжатый газ</option> 
+									<option value="Сжиженный газ">Сжиженный газ</option> 
+									<option value="Без топлива">Без топлива</option> 
 								</select>
 							</div>
 						</div>

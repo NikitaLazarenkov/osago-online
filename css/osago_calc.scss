@@ -37,7 +37,7 @@ $orange:#F15A0B;
             border: 2px solid $orange;
             border-radius: 5px;
             cursor: pointer;
-            font-family: "Geometric 706";
+            font-family: 'Futura';
             text-transform: uppercase;
             color: #fff;
             font-style: normal;
@@ -64,9 +64,10 @@ $orange:#F15A0B;
         background-position: bottom center;
 
         h1 {
-            font-family: "Geometric 706";
+            font-family: 'Futura';
             font-size: 38px;
             line-height: 50px;
+            font-weight: normal;
             color: #fff;
             text-align: center;
             padding: 20px 0 36px 0;
@@ -111,6 +112,8 @@ $orange:#F15A0B;
                 
                 .osago_nav_vision_item {
                     position: relative;
+                    display: flex;
+                    align-items: center;
                     box-sizing: border-box;
                     border: 2px solid #fff;
                     background-color: $orange;
@@ -118,13 +121,17 @@ $orange:#F15A0B;
                     height: 60px;
                     border-radius: 50%;
                     color: #fff;
-                    font-family: "Geometric 706";
+                    font-family: 'Futura';
                     font-style: bold;
                     text-align: center;
                     font-size: 43px;
-                    line-height: 64px;
                     z-index: 10;
                     transition: 1s;
+                    span {
+                        margin-left: auto;
+                        margin-right: auto;
+                        line-height: 56px;
+                    }
                 }
                 .osago_nav_vision_item.active {
                     margin-left: 60px;
@@ -204,7 +211,7 @@ $orange:#F15A0B;
 
                         h2 {
                             color: #fff;
-                            font-family: "Geometric 706";
+                            font-family: 'Futura';
                             font-style: normal;
                             font-weight: 700;
                             text-align: center;
@@ -216,7 +223,7 @@ $orange:#F15A0B;
 
                         p {
                             color: #fff;
-                            font-family: "Geometric 706";
+                            font-family: 'a_FuturaOrto';
                             font-style: normal;
                             font-weight: 400;
                             text-align: left;
@@ -232,7 +239,7 @@ $orange:#F15A0B;
                         }
                         p.result {
                             color: #fff;
-                            font-family: "Geometric 706";
+                            font-family: 'a_FuturaOrto';
                             font-style: normal;
                             font-weight: 400;
                             text-align: left;
@@ -252,7 +259,7 @@ $orange:#F15A0B;
                             flex-direction: column;
                             label {
                                 color: #fff;
-                                font-family: "Geometric 706";
+                                font-family: 'Futura';
                                 font-style: normal;
                                 font-weight: 700;
                                 text-align: left;
@@ -267,9 +274,10 @@ $orange:#F15A0B;
                                 margin-bottom: 12px;
                                 padding-left: 12px;
                                 padding-right: 30px;
-                                font-family: "Geometric 706";
+                                font-family: 'a_FuturaOrto';
                                 font-style: normal;
                                 border: none;
+                                border-radius: 5px !important;
                                 -webkit-appearance: none;
                                 background-image: url('/images/select_arrows.svg');
                                 background-position: right 5px center;
@@ -290,7 +298,7 @@ $orange:#F15A0B;
                             input[type="email"] {
                                 box-sizing: border-box;
                                 display: block;
-                                font-family: "Geometric 706";
+                                font-family: 'a_FuturaOrto';
                                 font-style: normal;
                                 height: 36px;
                                 font-size: 20px;
@@ -323,7 +331,7 @@ $orange:#F15A0B;
                                 width: 47%;
                                 label {
                                     color: #fff;
-                                    font-family: "Geometric 706";
+                                    font-family: 'Futura';
                                     font-style: normal;
                                     font-weight: 700;
                                     text-align: left;
@@ -331,7 +339,7 @@ $orange:#F15A0B;
                                     line-height: 36px;
                                 }
                                 input {
-                                    font-family: "Geometric 706";
+                                    font-family: 'a_FuturaOrto';
                                     font-style: normal;
                                     height: 36px;
                                     font-size: 20px;
@@ -347,7 +355,7 @@ $orange:#F15A0B;
                             margin-bottom: 12px;
                             label {
                                 color: #fff;
-                                font-family: "Geometric 706";
+                                font-family: 'Futura';
                                 font-style: normal;
                                 font-weight: 700;
                                 text-align: left;
@@ -368,7 +376,7 @@ $orange:#F15A0B;
                                     background-position: left center;
                                     background-repeat: no-repeat;
                                     color: #fff;
-                                    font-family: "Geometric 706";
+                                    font-family: 'a_FuturaOrto';
                                     font-style: normal;
                                     font-weight: 400;
                                     text-align: left;
@@ -398,7 +406,7 @@ $orange:#F15A0B;
                                     cursor: pointer;
                                     position: relative;
                                     color: #fff;
-                                    font-family: "Geometric 706";
+                                    font-family: 'a_FuturaOrto';
                                     font-style: normal;
                                     font-weight: 400;
                                     text-align: left;
@@ -417,7 +425,7 @@ $orange:#F15A0B;
 
                             .upload_title {
                                 color: #fff;
-                                font-family: "Geometric 706";
+                                font-family: 'Futura';
                                 font-style: normal;
                                 font-weight: 700;
                                 text-align: left;
@@ -442,7 +450,7 @@ $orange:#F15A0B;
                                     width: 100%;
                                     label {
                                         color: #000;
-                                        font-family: "Geometric 706";
+                                        font-family: 'Futura';
                                         font-style: normal;
                                         font-weight: 700;
                                         text-align: left;
@@ -456,7 +464,7 @@ $orange:#F15A0B;
                                         .upload_block {
                                             background: transparent;
                                             color: #000;
-                                            font-family: "Geometric 706";
+                                            font-family: 'a_FuturaOrto';
                                             font-style: normal;
                                             font-weight: 400;
                                             text-align: left;
@@ -479,7 +487,7 @@ $orange:#F15A0B;
                                             color: #fff;
                                             text-align: center;
                                             line-height: 18px;
-                                            font-family: "Geometric 706";
+                                            font-family: 'a_FuturaOrto';
                                             font-style: normal;
                                             font-weight: 400;
                                             font-size:14px;
@@ -515,7 +523,7 @@ $orange:#F15A0B;
                                 width: 70%;
                                 label {
                                     color: #fff;
-                                    font-family: "Geometric 706";
+                                    font-family: 'Futura';
                                     font-style: normal;
                                     font-weight: 700;
                                     text-align: left;
@@ -523,7 +531,7 @@ $orange:#F15A0B;
                                     line-height: 36px;
                                 }
                                 select {
-                                    font-family: "Geometric 706";
+                                    font-family: 'a_FuturaOrto';
                                     font-style: normal;
                                     height: 36px;
                                     font-size: 20px;
@@ -560,7 +568,7 @@ $orange:#F15A0B;
                                         cursor: pointer;
                                         position: relative;
                                         color: #fff;
-                                        font-family: "Geometric 706";
+                                        font-family: 'Futura';
                                         font-style: normal;
                                         font-weight: 700;
                                         text-align: left;
@@ -592,7 +600,7 @@ $orange:#F15A0B;
                     border: none;
                     border-radius: 5px;
                     cursor: pointer;
-                    font-family: "Geometric 706";
+                    font-family: 'a_FuturaOrto';
                     text-transform: none;
                     color: #000;
                     font-style: normal;

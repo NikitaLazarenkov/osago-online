@@ -7,3 +7,11 @@
     url('../fonts/9211.woff') format('woff'),
     url('../fonts/9211.woff2') format('woff2');
 }
+
+@font-face {font-family: "a_FuturaOrto";
+    src: url('../fonts/a_FuturaOrto.ttf') format('truetype');
+}
+
+@font-face {font-family: "Futura";
+    src: url('../fonts/a_Futura.ttf') format('truetype');
+}

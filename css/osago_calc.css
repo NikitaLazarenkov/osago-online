@@ -37,7 +37,7 @@
   border: 2px solid #F15A0B;
   border-radius: 5px;
   cursor: pointer;
-  font-family: "Geometric 706";
+  font-family: 'Futura';
   text-transform: uppercase;
   color: #fff;
   font-style: normal;
@@ -66,9 +66,10 @@
 }
 
 .calc_popup_bg .calc_container h1 {
-  font-family: "Geometric 706";
+  font-family: 'Futura';
   font-size: 38px;
   line-height: 50px;
+  font-weight: normal;
   color: #fff;
   text-align: center;
   padding: 20px 0 36px 0;
@@ -116,6 +117,8 @@
 
 .calc_popup_bg .calc_container form.osago_calc .osago_nav_vision .osago_nav_vision_item {
   position: relative;
+  display: flex;
+  align-items: center;
   box-sizing: border-box;
   border: 2px solid #fff;
   background-color: #F15A0B;
@@ -123,13 +126,18 @@
   height: 60px;
   border-radius: 50%;
   color: #fff;
-  font-family: "Geometric 706";
+  font-family: 'Futura';
   font-style: bold;
   text-align: center;
   font-size: 43px;
-  line-height: 64px;
   z-index: 10;
   transition: 1s;
+}
+
+.calc_popup_bg .calc_container form.osago_calc .osago_nav_vision .osago_nav_vision_item span {
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 56px;
 }
 
 .calc_popup_bg .calc_container form.osago_calc .osago_nav_vision .osago_nav_vision_item.active {
@@ -221,7 +229,7 @@
 
 .calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide h2 {
   color: #fff;
-  font-family: "Geometric 706";
+  font-family: 'Futura';
   font-style: normal;
   font-weight: 700;
   text-align: center;
@@ -233,7 +241,7 @@
 
 .calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide p {
   color: #fff;
-  font-family: "Geometric 706";
+  font-family: 'a_FuturaOrto';
   font-style: normal;
   font-weight: 400;
   text-align: left;
@@ -250,7 +258,7 @@
 
 .calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide p.result {
   color: #fff;
-  font-family: "Geometric 706";
+  font-family: 'a_FuturaOrto';
   font-style: normal;
   font-weight: 400;
   text-align: left;
@@ -272,7 +280,7 @@
 
 .calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .input_container label {
   color: #fff;
-  font-family: "Geometric 706";
+  font-family: 'Futura';
   font-style: normal;
   font-weight: 700;
   text-align: left;
@@ -288,9 +296,10 @@
   margin-bottom: 12px;
   padding-left: 12px;
   padding-right: 30px;
-  font-family: "Geometric 706";
+  font-family: 'a_FuturaOrto';
   font-style: normal;
   border: none;
+  border-radius: 5px !important;
   -webkit-appearance: none;
   background-image: url("/images/select_arrows.svg");
   background-position: right 5px center;
@@ -313,7 +322,7 @@
 .calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .input_container input[type="email"] {
   box-sizing: border-box;
   display: block;
-  font-family: "Geometric 706";
+  font-family: 'a_FuturaOrto';
   font-style: normal;
   height: 36px;
   font-size: 20px;
@@ -352,7 +361,7 @@
 
 .calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .double_input .input_container label {
   color: #fff;
-  font-family: "Geometric 706";
+  font-family: 'Futura';
   font-style: normal;
   font-weight: 700;
   text-align: left;
@@ -361,7 +370,7 @@
 }
 
 .calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .double_input .input_container input {
-  font-family: "Geometric 706";
+  font-family: 'a_FuturaOrto';
   font-style: normal;
   height: 36px;
   font-size: 20px;
@@ -378,7 +387,7 @@
 
 .calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .radio_container label {
   color: #fff;
-  font-family: "Geometric 706";
+  font-family: 'Futura';
   font-style: normal;
   font-weight: 700;
   text-align: left;
@@ -401,7 +410,7 @@
   background-position: left center;
   background-repeat: no-repeat;
   color: #fff;
-  font-family: "Geometric 706";
+  font-family: 'a_FuturaOrto';
   font-style: normal;
   font-weight: 400;
   text-align: left;
@@ -432,7 +441,7 @@
   cursor: pointer;
   position: relative;
   color: #fff;
-  font-family: "Geometric 706";
+  font-family: 'a_FuturaOrto';
   font-style: normal;
   font-weight: 400;
   text-align: left;
@@ -452,7 +461,7 @@
 
 .calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .upload_container .upload_title {
   color: #fff;
-  font-family: "Geometric 706";
+  font-family: 'Futura';
   font-style: normal;
   font-weight: 700;
   text-align: left;
@@ -480,7 +489,7 @@
 
 .calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .upload_container .input_container .upload_form label {
   color: #000;
-  font-family: "Geometric 706";
+  font-family: 'Futura';
   font-style: normal;
   font-weight: 700;
   text-align: left;
@@ -495,7 +504,7 @@
 .calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .upload_container .input_container .upload_form label .upload_block {
   background: transparent;
   color: #000;
-  font-family: "Geometric 706";
+  font-family: 'a_FuturaOrto';
   font-style: normal;
   font-weight: 400;
   text-align: left;
@@ -518,7 +527,7 @@
   color: #fff;
   text-align: center;
   line-height: 18px;
-  font-family: "Geometric 706";
+  font-family: 'a_FuturaOrto';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -555,7 +564,7 @@
 
 .calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .select_check_container .input_container label {
   color: #fff;
-  font-family: "Geometric 706";
+  font-family: 'Futura';
   font-style: normal;
   font-weight: 700;
   text-align: left;
@@ -564,7 +573,7 @@
 }
 
 .calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .select_check_container .input_container select {
-  font-family: "Geometric 706";
+  font-family: 'a_FuturaOrto';
   font-style: normal;
   height: 36px;
   font-size: 20px;
@@ -602,7 +611,7 @@
   cursor: pointer;
   position: relative;
   color: #fff;
-  font-family: "Geometric 706";
+  font-family: 'Futura';
   font-style: normal;
   font-weight: 700;
   text-align: left;
@@ -631,7 +640,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-family: "Geometric 706";
+  font-family: 'a_FuturaOrto';
   text-transform: none;
   color: #000;
   font-style: normal;
