@@ -19,13 +19,17 @@
 		</nav>
 		<section class="calc_container">
 			<form id="osago_calc" class="osago_calc">
+				<!-- Hidden Required Fields -->
+        <input type="hidden" name="project_name" value="Заявка на ОСАГО">
+        <input type="hidden" name="form_subject" value="Заявка с сайта site.ru">
+        <!-- END Hidden Required Fields -->
 				<input type="hidden" name="send_owner" id="send_owner">
 				<input type="hidden" name="send_mesto_register" id="send_mesto_register">
 				<input type="hidden" name="send_more_mesto_register" id="send_more_mesto_register">
 				<input type="hidden" name="send_transport_type" id="send_transport_type">
 				<input type="hidden" name="send_more_type" id="send_more_type">
 				<input type="hidden" name="send_power" id="send_power">
-				<input type="hidden" name="Прицеп" id="send_pritsep">
+				<input type="hidden" name="send_pritsep" id="send_pritsep">
 				<input type="hidden" name="send_staj" id="send_staj">
 				<input type="hidden" name="send_srok" id="send_srok">
 				<input type="hidden" name="send_kbm" id="send_kbm">
@@ -820,8 +824,8 @@
 							<div class="input_container">
 								<label for="osago_dostavka">Выберете способ получения полиса:</label>
 								<select name="osago_dostavka" id="osago_dostavka">
-									<option value="1">На электронную почту</option> 
-									<option value="2">Самовывоз</option> 
+									<option value="На электронную почту">На электронную почту</option> 
+									<option value="Самовывоз">Самовывоз</option> 
 								</select>
 							</div>
 							<div class="check_container">
@@ -829,7 +833,7 @@
 									<div class="check">
 											Оформляя заявку на покупку страхового полиса, 
 											Вы даёте согласие на обработку Ваших персональных.
-										<input type="checkbox" id="osago_soglasie" name="osago_soglasie" />
+										<input type="checkbox" id="osago_soglasie" name="osago_soglasie" required/>
 									</div>
 								</div>
 							</div>

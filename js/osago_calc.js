@@ -443,5 +443,22 @@ jQuery(document).ready(function($) {
     $('select').change(function() {
         osagoCalc();
     });
+
+    //E-mail Ajax Send
+    $("#osago_calc").submit(function() { //Change
+        var th = $(this);
+        $.ajax({
+            type: "POST",
+            url: "mail.php", //Change
+            data: th.serialize()
+        }).done(function() {
+            alert("Спасибо! Ваша заявка отправлена! Наш менеджер свяжется с вами в ближайшее время.");
+            setTimeout(function() {
+            // Done Functions
+            th.trigger("reset");
+            }, 1000);
+        });
+        return false;
+    });
     
 });
