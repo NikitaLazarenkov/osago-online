@@ -2,6 +2,48 @@ jQuery(document).ready(function($) {
 
     $('#more_mesto_register').prop('disabled', true);
 
+    var audioElement = document.createElement('audio');
+    audioElement.setAttribute('src', '/1.mp3');
+    
+    //audioElement.load()
+    $.get();
+    audioElement.addEventListener("load", function() {
+    audioElement.play();
+    }, true);
+
+    $('.play').click(function() {
+    audioElement.play();
+    });
+
+    var audioElement2 = document.createElement('audio');
+    audioElement2.setAttribute('src', '/2.mp3');
+    
+    //audioElement.load()
+    $.get();
+    audioElement2.addEventListener("load", function() {
+    audioElement2.play();
+    }, true);
+
+    $('.play2').click(function() {
+    audioElement2.play();
+    });
+
+    $('#success_close').click(function() {
+        var url = "http://ya.ru";
+        $(location).attr('href',url);
+    });
+    
+    $('.calc_close_button').click(function() {
+        var url = "http://ya.ru";
+        $(location).attr('href',url);
+    });
+
+    $('#phone').change(function() {
+        var a = $('#phone').val();
+        $('#success_phone').html(a);
+    });
+
+
     // Кастомный радиоблок
     $('.radioblock').find('.radio').each(function(){
         $(this).click(function(){
@@ -203,8 +245,6 @@ jQuery(document).ready(function($) {
             $('.id1203, .id1204, .id1205').css({'color' : '#cccccc'});
             $('.id1204').removeClass('active');
             $('.id1205').addClass('active');
-            $('#send_owner').val('Юридическое лицо');
-            $('#send_dopusk').val("без ограничений");
         } else {
             $('#osago_srok').prop('disabled', false);
             $('#osago_staj').prop('disabled', false);
@@ -212,12 +252,7 @@ jQuery(document).ready(function($) {
             $('.id1203, .id1204, .id1205').css({'color' : '#ffffff'});
             $('.id1205').removeClass('active');
             $('.id1204').addClass('active');
-            $('#send_owner').val('Физическое лицо');
-            $('#send_dopusk').val("с ограничениями");
         }
-        var b = $('#send_owner').val();
-        console.log(b);
-        console.log($('#send_dopusk').val());
     });
 
     $('.osago_dopusk').click(function () {
@@ -225,17 +260,14 @@ jQuery(document).ready(function($) {
         var b = $('#owner').val();
         if (b==2) {
             $('#osago_staj').prop('disabled', true);
-            $('#send_dopusk').val("без ограничений");
         } else {
             if (a=="Без ограничений") {
                 $('#osago_staj').prop('disabled', true);
-                $('#send_dopusk').val("без ограничений");
+                $('#osago_staj option:last').prop('selected', true);
             } else {
                 $('#osago_staj').prop('disabled', false);
-                $('#send_dopusk').val("с ограничениями");
             }
         }
-        console.log($('#send_dopusk').val());
     });
     
     // Блокировка дополнительного места регистрации
@@ -298,6 +330,20 @@ jQuery(document).ready(function($) {
         var type = $('#transport_type').val(); 
         var type2 = $('#more_type').val();
         var pritsep = $('#osago_pritsep');
+        var za = $('#osago_dopusk').val();
+
+        if (owner==2) {
+            $('#send_owner').val('Юридическое лицо');
+            $('#send_dopusk').val("без ограничений");
+        } else {
+            if (za=="Без ограничений") {
+                $('#send_dopusk').val("без ограничений");
+            } else {
+                $('#send_dopusk').val("с ограничениями");
+            }
+            $('#send_owner').val('Физическое лицо');
+        }
+
 
         // Тип транспорта с коэффициентом на отправку
         var send_type = $('#transport_type').find(':selected').html(); // Тип транспорта
@@ -317,8 +363,7 @@ jQuery(document).ready(function($) {
             $('#send_transport_type').val(send_type);
             $('#send_more_type').val(send_type2 + " (Бс=" + tb + ")");
         }
-        console.log($('#send_transport_type').val());
-        console.log($('#send_more_type').val());
+        
         
 
         // смотрим коэффициент территории
@@ -354,8 +399,7 @@ jQuery(document).ready(function($) {
                 $('#send_more_mesto_register').val(send_ter2);
             }
         }
-        console.log($('#send_mesto_register').val());
-        console.log($('#send_more_mesto_register').val());
+        
 
         var kpr = 1;
         if (pritsep.is(":checked")) {
@@ -375,7 +419,7 @@ jQuery(document).ready(function($) {
             kpr = 1;
             $('#send_pritsep').val("Нет (" + kpr + ")");
         }
-        console.log($('#send_pritsep').val());
+        
 
         var km = $('#osago_power').val();
         var kvs = $('#osago_staj').val();
@@ -384,19 +428,19 @@ jQuery(document).ready(function($) {
 
         var send_power = $('#osago_power').find(':selected').html(); // Мощность двигателя
         $('#send_power').val(send_power);
-        console.log($('#send_power').val());
+        
 
         var send_staj = $('#osago_staj').find(':selected').html(); // Мощность двигателя
         $('#send_staj').val(send_staj);
-        console.log($('#send_staj').val());
+        
 
         var send_srok = $('#osago_srok').find(':selected').html(); // Мощность двигателя
         $('#send_srok').val(send_srok);
-        console.log($('#send_srok').val());
+        
 
         var send_kbm = $('#osago_kbm').find(':selected').html(); // Мощность двигателя
         $('#send_kbm').val(send_kbm);
-        console.log($('#send_kbm').val());
+        
         
         //console.log('------------------------------------');
         //console.log('Базовая ставка = ' + tb);
@@ -412,7 +456,7 @@ jQuery(document).ready(function($) {
         } else {
             $('#send_diagnostic').val("Не нужна");
         }
-        console.log($('#send_diagnostic').val());
+        
 
         var summ = tb * kt * km * kvs * kp * kbm * kpr;
         
@@ -432,9 +476,26 @@ jQuery(document).ready(function($) {
         $('.osago_summ2').html(summ2);
         $('.osago_summ3').html(summ3);
 
-        $('.send_summ').val(summ + " рублей");
-        $('.send_summ2').val(summ2 + " рублей");
-        $('.send_summ3').val(summ3 + " рублей");
+        $('#send_summ1').val(summ + " рублей");
+        $('#send_summ2').val(summ2 + " рублей");
+        $('#send_summ3').val(summ3 + " рублей");
+
+        console.log('------------------------');
+        console.log($('#send_owner').val());
+        console.log($('#send_transport_type').val());
+        console.log($('#send_more_type').val());
+        console.log($('#send_mesto_register').val());
+        console.log($('#send_more_mesto_register').val());
+        console.log($('#send_pritsep').val());
+        console.log($('#send_power').val());
+        console.log($('#send_dopusk').val());
+        console.log($('#send_staj').val());
+        console.log($('#send_srok').val());
+        console.log($('#send_kbm').val());
+        console.log($('#send_diagnostic').val());
+        console.log($('#send_summ1').val());
+        console.log($('#send_summ2').val());
+        console.log($('#send_summ3').val());
     }
 
     $('.check, .radio').click(function() {
@@ -446,17 +507,24 @@ jQuery(document).ready(function($) {
 
     //E-mail Ajax Send
     $("#osago_calc").submit(function() { //Change
-        var th = $(this);
+        var formData = new FormData($(this)[0]);
+        var url = "http://ya.ru";
         $.ajax({
             type: "POST",
             url: "mail.php", //Change
-            data: th.serialize()
+            data: formData,
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false
         }).done(function() {
-            alert("Спасибо! Ваша заявка отправлена! Наш менеджер свяжется с вами в ближайшее время.");
+            $('.success_popup').show();
+            $('.calc_popup_bg').hide();
             setTimeout(function() {
             // Done Functions
-            th.trigger("reset");
-            }, 1000);
+            $("#osago_calc").trigger("reset");
+            $(location).attr('href',url);
+            }, 7000);
         });
         return false;
     });

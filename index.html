@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -12,13 +12,21 @@
 		<script src="/js/jquery-3.2.1.js"></script>
 </head>
 <body>
+	<div class="success_popup">
+		<div class="success_container">
+			<p>Ваша заявка успешно отправлена!</p>
+			<p>Спасибо за доверие хххххххх</p>
+			<p>Наш специалист позвонит Вам в ближайшее время на номер:<br><span id="success_phone"></span></p>
+			<div id="success_close"></div>
+		</div>
+	</div>
 	<div class="calc_popup_bg">
 		<nav class="calc_nav">
 				<div id="osago_open" class="calc_nav_button active">Осаго</div>
 				<div id="kasko_open" class="calc_nav_button">Каско</div>
 		</nav>
 		<section class="calc_container">
-			<form id="osago_calc" class="osago_calc">
+			<form id="osago_calc" class="osago_calc" enctype="multipart/form-data" method="post">
 				<!-- Hidden Required Fields -->
         <input type="hidden" name="project_name" value="Заявка на ОСАГО">
         <input type="hidden" name="form_subject" value="Заявка с сайта site.ru">
@@ -38,7 +46,6 @@
 				<input type="hidden" name="send_summ2" id="send_summ2">
 				<input type="hidden" name="send_summ3" id="send_summ3">
 				<input type="hidden" name="send_diagnostic" id="send_diagnostic">
-				<input type="hidden" name="send_dostavka" id="send_dostavka">
 
 				<h1>Калькулятор ОСАГО</h1>
 				<button type="button" class="calc_close_button"></button>
@@ -158,7 +165,7 @@
 								</select>
 							</div>
 							<div class="input_container">
-								<label for="more_mesto_register"></label>
+								
 								<select disabled name="more_mesto_register" id="more_mesto_register">
 									<option value="0" data-chained="85 84 83 82 81 80 20 9 50 77 78 47 1 87">---</option>
 
@@ -598,7 +605,7 @@
 							<div class="input_container">
 								<select name="more_type" id="more_type">
 									<option value="0" data-chained="a tramvai trolleibus traktor">---</option>
-									<option value="1" data-val1="3087" data-val2="4118" data-chained="b">Для личного использования</option> 
+									<option value="1" data-val1="4118" data-val2="3087" data-chained="b">Для личного использования</option> 
 									<option value="2" data-val1="6166" data-val2="6166" data-chained="b">Используемый в качестве такси</option> 
 									<option value="3" data-val1="4211" data-chained="c">С разрешенной максимальной массой 16 тонн и менее</option>
 									<option value="4" data-val1="6341" data-chained="c">С разрешенной максимальной массой более 16 тонн</option>
@@ -612,17 +619,15 @@
 							</div>
 							<div class="select_check_container">
 								<div class="input_container">
-									<p>
-										<label for="osago_power">Мощность двигателя (л.с.):</label>
-										<select name="osago_power" id="osago_power">
-											<option value="0.6">до 50 включительно (Км = 0.6)</option> 
-											<option value="1">свыше 50 до 70 включительно (Км = 1) </option> 
-											<option value="1.1">свыше 70 до 100 включительно (Км = 1.1) </option> 
-											<option value="1.2">свыше 100 до 120 включительно (Км = 1.2) </option> 
-											<option value="1.4">свыше 120 до 150 включительно (Км = 1.4) </option> 
-											<option value="1.6">свыше 150 (1.6) </option> 
-										</select>
-									</p>
+									<label for="osago_power">Мощность двигателя (л.с.):</label>
+									<select name="osago_power" id="osago_power">
+										<option value="0.6">до 50 включительно (Км = 0.6)</option> 
+										<option value="1">свыше 50 до 70 включительно (Км = 1) </option> 
+										<option value="1.1">свыше 70 до 100 включительно (Км = 1.1) </option> 
+										<option value="1.2">свыше 100 до 120 включительно (Км = 1.2) </option> 
+										<option value="1.4">свыше 120 до 150 включительно (Км = 1.4) </option> 
+										<option value="1.6">свыше 150 (1.6) </option> 
+									</select>
 								</div>
 								<div class="check_container">
 									<div class="checkboxes">
@@ -663,8 +668,8 @@
 							<div class="input_container">
 								<label for="osago_staj">Возраст и водительский стаж:</label>
 								<select name="osago_staj" id="osago_staj">
-									<option value="1" data-chained="2">для физических лиц</option>
-									<option value="1" data-chained="1">старше 22 лет, стаж свыше 3 лет (Квс = 1) </option>
+									<option value="1.8" data-chained="2">для физических лиц</option>
+									<option value="1" data-chained="1" selected>старше 22 лет, стаж свыше 3 лет (Квс = 1) </option>
 									<option value="1.7" data-chained="1">старше 22 лет, стаж до 3 лет включительно (Квс = 1.7) </option>
 									<option value="1.6" data-chained="1">до 22 лет включительно, стаж свыше 3 лет (Квс = 1.6) </option> 
 									<option value="1.8" data-chained="1">до 22 лет включительно, стаж до 3 лет включительно (Квс = 1.8) </option> 
@@ -707,8 +712,7 @@
 								<input type="email" placeholder="mail@mail.ru" name="email" id="email" value="" required>
 							</div>
 							<h2>
-								Необходимо загрузить документы для оформления<br>
-								полиса ОСАГО
+								Необходимо загрузить документы для оформления полиса ОСАГО
 							</h2>
 							<div class="upload_container">
 								<div class="upload_title">
@@ -717,9 +721,9 @@
 								<div class="input_container">
 									<div class="upload_form">
 										<label>
-											<input name="file1" type="file" class="main_input_file file_osago_passport" id="osago_file_passport" value="" multiple>
+											<input name="file[]" type="file" class="main_input_file file_osago_passport" id="osago_file_passport" value="" multiple>
 											<div>1-я страница паспорта и страница с регистрацией</div>
-											<input class="upload_block" type="text" id="osago_passport" value="Файл не выбран." disabled>
+											<input class="upload_block" type="text" name="osago_passport" id="osago_passport" value="Файл не выбран." disabled>
 										</label>
 									</div>
 								</div>
@@ -733,7 +737,7 @@
 								<div class="input_container">
 									<div class="upload_form">
 										<label>
-											<input name="file2" type="file" class="main_input_file file_osago_sts" id="osago_file_sts" value="" multiple>
+											<input name="file[]" type="file" class="main_input_file file_osago_sts" id="osago_file_sts" value="" multiple>
 											<div>СТС или ПТС</div>
 											<input class="upload_block" type="text" id="osago_sts" value="Файл не выбран." disabled>
 										</label>
@@ -747,7 +751,7 @@
 								<div class="input_container">
 									<div class="upload_form">
 										<label>
-											<input name="file3" type="file" class="main_input_file file_osago_vu" id="osago_file_vu" value="" multiple>
+											<input name="file[]" type="file" class="main_input_file file_osago_vu" id="osago_file_vu" value="" multiple>
 											<div>ВУ всех лиц допущенных к управлению</div>
 											<input class="upload_block" type="text" id="osago_vu" value="Файл не выбран." disabled>
 										</label>
@@ -761,7 +765,7 @@
 								<div class="input_container">
 									<div class="upload_form">
 										<label>
-											<input name="file4" type="file" class="main_input_file file_osago_diagnostic" id="osago_file_diagnostic" value="" multiple>
+											<input name="file[]" type="file" class="main_input_file file_osago_diagnostic" id="osago_file_diagnostic" value="" multiple>
 											<div>Диагностическая карта ТС</div>
 											<input class="upload_block" type="text" id="osago_diagnostic" value="Файл не выбран." disabled>
 										</label>
@@ -842,32 +846,32 @@
 				</div>
 				<nav id="osago_step_1_nav" class="osago_bottom_nav">
 					<div></div>
-					<button type="button" id="step1_go1" class="calc_center_button">Поехали</button>
-					<button type="button" id="step1_go2" class="calc_right_arrow"></button>
+					<button type="button" id="step1_go1" class="calc_center_button play">Поехали</button>
+					<button type="button" id="step1_go2" class="calc_right_arrow play"></button>
 				</nav>
 				<nav id="osago_step_2_nav" class="osago_bottom_nav">
 					<button type="button" id="step2_back" class="calc_left_arrow"></button>
-					<button type="button" id="step2_go1" class="calc_center_button">Оформить полис</button>
-					<button type="button" id="step2_go2" class="calc_right_arrow"></button>
+					<button type="button" id="step2_go1" class="calc_center_button play2">Оформить полис</button>
+					<button type="button" id="step2_go2" class="calc_right_arrow play2"></button>
 				</nav>
 				<nav id="osago_step_3_nav" class="osago_bottom_nav">
 					<button type="button" id="step3_back" class="calc_left_arrow"></button>
-					<button type="button" id="step3_go1" class="calc_center_button">Далее</button>
-					<button type="button" id="step3_go2" class="calc_right_arrow"></button>
+					<button type="button" id="step3_go1" class="calc_center_button play2">Далее</button>
+					<button type="button" id="step3_go2" class="calc_right_arrow play2"></button>
 				</nav>
 				<nav id="osago_step_4_nav" class="osago_bottom_nav">
 					<button type="button" id="step4_back" class="calc_left_arrow"></button>
-					<button type="button" id="step4_go1" class="calc_center_button">Далее</button>
-					<button type="button" id="step4_go2" class="calc_right_arrow"></button>
+					<button type="button" id="step4_go1" class="calc_center_button play2">Далее</button>
+					<button type="button" id="step4_go2" class="calc_right_arrow play2"></button>
 				</nav>
 				<nav id="osago_step_5_nav" class="osago_bottom_nav">
 						<button type="button" id="step5_back" class="calc_left_arrow"></button>
-						<button type="button" id="step5_go1" class="calc_center_button">Далее</button>
-						<button type="button" id="step5_go2" class="calc_right_arrow"></button>
+						<button type="button" id="step5_go1" class="calc_center_button play2">Далее</button>
+						<button type="button" id="step5_go2" class="calc_right_arrow play2"></button>
 				</nav>
 				<nav id="osago_step_6_nav" class="osago_bottom_nav">
-					<button type="button" id="step6_back" class="calc_left_arrow"></button>
-					<button id="step6_go1" type="submit" class="calc_center_button">Отправить заявку</button>
+					<button type="button" id="step6_back" class="calc_left_arrow play2"></button>
+					<button id="step6_go1" type="submit" class="calc_center_button play2">Отправить заявку</button>
 					<div></div>
 				</nav>
 			</form>
