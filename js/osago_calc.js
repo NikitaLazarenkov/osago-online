@@ -1,6 +1,17 @@
 jQuery(document).ready(function($) {
 
-    $('#more_mesto_register').prop('disabled', true);
+    
+    $('#kasko_open').click(function() {
+        var url = "http://ya.ru";
+        $(location).attr('href',url);
+    });
+
+    $('#osago_open').click(function() {
+        var url = "http://ya.ru";
+        $(location).attr('href',url);
+    });
+
+    // SOUND
 
     var audioElement = document.createElement('audio');
     audioElement.setAttribute('src', '/1.mp3');
@@ -11,10 +22,6 @@ jQuery(document).ready(function($) {
     audioElement.play();
     }, true);
 
-    $('.play').click(function() {
-    audioElement.play();
-    });
-
     var audioElement2 = document.createElement('audio');
     audioElement2.setAttribute('src', '/2.mp3');
     
@@ -23,10 +30,6 @@ jQuery(document).ready(function($) {
     audioElement2.addEventListener("load", function() {
     audioElement2.play();
     }, true);
-
-    $('.play2').click(function() {
-    audioElement2.play();
-    });
 
     $('#success_close').click(function() {
         var url = "http://ya.ru";
@@ -66,17 +69,21 @@ jQuery(document).ready(function($) {
     });
 
     // Переключение вкладок ОСАГО и КАСКО
-    $('#kasko_open').click(function () {
-        $(this).addClass('active');
-        $('#osago_open').removeClass('active');
-        $('#osago_calc').hide();
-        $('#kasko_calc').show();
-    });
-    $('#osago_open').click(function () {
-        $(this).addClass('active');
-        $('#kasko_open').removeClass('active');
-        $('#osago_calc').show();
-        $('#kasko_calc').hide();
+    //$('#kasko_open').click(function () {
+    //    $(this).addClass('active');
+    //    $('#osago_open').removeClass('active');
+    //    $('#osago_calc').hide();
+    //    $('#kasko_calc').show();
+    //});
+    //$('#osago_open').click(function () {
+    //    $(this).addClass('active');
+    //    $('#kasko_open').removeClass('active');
+    //    $('#osago_calc').show();
+    //    $('#kasko_calc').hide();
+    //});
+
+    $('.play').click(function() {
+        audioElement.play();
     });
 
     // НАВИГАЦИЯ ПО СЛАЙДАМ
@@ -103,6 +110,7 @@ jQuery(document).ready(function($) {
         $('#osago_step_2_nav').hide();
         $('#osago_step_3_nav').css({'display' : 'flex'});
         $('.calc_sliders_container').css({'left' : 'calc(-200% - 50px'});
+        audioElement2.play();
     });
     // Переход с 3 слайдера на 2
     $('#step3_back').click(function () {
@@ -137,6 +145,7 @@ jQuery(document).ready(function($) {
             $('#osago_step_3_nav').hide();
             $('#osago_step_4_nav').css({'display' : 'flex'});
             $('.calc_sliders_container').css({'left' : 'calc(-300% - 75px'});
+            audioElement2.play();
         }
     });
     // Переход с 4 слайдера на 3
@@ -167,6 +176,7 @@ jQuery(document).ready(function($) {
                 $('#osago_step_4_nav').hide();
                 $('#osago_step_5_nav').css({'display' : 'flex'});
                 $('.calc_sliders_container').css({'left' : 'calc(-400% - 100px'});
+                audioElement2.play();
             }
         } else {
             if (a=="") {
@@ -185,6 +195,7 @@ jQuery(document).ready(function($) {
                 $('#osago_step_4_nav').hide();
                 $('#osago_step_6_nav').css({'display' : 'flex'});
                 $('.calc_sliders_container').css({'left' : 'calc(-500% - 125px'});
+                audioElement2.play();
             }
         }
     });
@@ -216,6 +227,7 @@ jQuery(document).ready(function($) {
             $('#osago_step_5_nav').hide();
             $('#osago_step_6_nav').css({'display' : 'flex'});
             $('.calc_sliders_container').css({'left' : 'calc(-500% - 125px'});
+            audioElement2.play();
         }
     });
     // Переход с 6 слайдера на 5 или 4
@@ -232,6 +244,14 @@ jQuery(document).ready(function($) {
             $('#osago_step_6_nav').hide();
             $('#osago_step_4_nav').css({'display' : 'flex'});
             $('.calc_sliders_container').css({'left' : 'calc(-300% - 75px'});
+        }
+    });
+    $('#step6_go1').click(function () {
+        var sogl = $('#osago_soglasie');
+        if (sogl.is(":checked")) {
+            $('.sogl_alert').hide();
+        } else {
+            $('.sogl_alert').show();
         }
     });
 

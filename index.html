@@ -2,12 +2,11 @@
 <html lang="ru">
 <head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 		<title>Расчет стоимости ОСАГО</title>
+		<link rel="icon" type="image/png" href="/favicon.png" />
 		<link rel="stylesheet" href="/css/osago_calc.css">
 		<link rel="stylesheet" href="/css/fonts.css">
-		<link href="http://allfont.ru/allfont.css?fonts=a_futuraorto" rel="stylesheet" type="text/css" />
 		<!--<link rel="stylesheet" href="/css/generic.css">-->
 		<script src="/js/jquery-3.2.1.js"></script>
 </head>
@@ -141,7 +140,7 @@
 									<option value="65" data-val1="_" data-val2="_">Сахалинская область (65)</option> 
 									<option value="66" data-val1="_" data-val2="_">Свердловская область (66)</option> 
 									<option value="67" data-val1="_" data-val2="_">Смоленская область (67)</option> 
-									<option value="68" data-val1="_" data-val2="_">Тамбовская область (68)</option> 
+									<option value="68" data-val1="_" data-val2="_" selected>Тамбовская область (68)</option> 
 									<option value="69" data-val1="_" data-val2="_">Тверская область (69)</option> 
 									<option value="70" data-val1="_" data-val2="_">Томская область (70)</option> 
 									<option value="71" data-val1="_" data-val2="_">Тульская область (71)</option> 
@@ -165,8 +164,7 @@
 								</select>
 							</div>
 							<div class="input_container">
-								
-								<select disabled name="more_mesto_register" id="more_mesto_register">
+								<select name="more_mesto_register" id="more_mesto_register">
 									<option value="0" data-chained="85 84 83 82 81 80 20 9 50 77 78 47 1 87">---</option>
 
 									<option value="9" data-val1="1.8" data-val2="1" data-chained="2">Уфа (2)</option> 
@@ -527,8 +525,8 @@
 									<option value="393" data-val1="1" data-val2="0.8" data-chained="67">Ярцево (67)</option> 
 									<option value="394" data-val1="0.7" data-val2="0.5" data-chained="67">Смоленская область - прочие (67)</option>
 
-									<option value="396" data-val1="1" data-val2="0.8" data-chained="68">Мичуринск (68)</option> 
 									<option value="397" data-val1="1.2" data-val2="0.8" data-chained="68">Тамбов (68)</option> 
+									<option value="396" data-val1="1" data-val2="0.8" data-chained="68">Мичуринск (68)</option> 
 									<option value="398" data-val1="0.8" data-val2="0.5" data-chained="68">Тамбовская область - прочие (68)</option>
 
 									<option value="400" data-val1="1.5" data-val2="1" data-chained="69">Тверь (69)</option> 
@@ -776,7 +774,7 @@
 								<div class="checkboxes">
 									<div class="check id1323">
 											Если у Вас отсутствует диагностическая карта и 
-											Вам нужно её оформить, поставьте отметку здесь:
+											Вам нужно её оформить, поставьте отметку здесь
 										<input type="checkbox" id="osago_have_diagnostic" />
 									</div>
 								</div>
@@ -838,6 +836,7 @@
 											Оформляя заявку на покупку страхового полиса, 
 											Вы даёте согласие на обработку Ваших персональных.
 										<input type="checkbox" id="osago_soglasie" name="osago_soglasie" required/>
+										<div class="sogl_alert">Пожалуйста дайте Ваше согласие на обработку Ваших данных!</div>
 									</div>
 								</div>
 							</div>

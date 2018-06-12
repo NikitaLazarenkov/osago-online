@@ -508,6 +508,18 @@
   line-height: 22px;
 }
 
+.calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .check_container .checkboxes .check .sogl_alert {
+  display: none;
+  position: absolute;
+  width: 70%;
+  color: #000;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 2px solid #000;
+}
+
 .calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .check_container .checkboxes .check.active {
   background-image: url("/images/check_active.svg");
 }
@@ -910,6 +922,7 @@
     margin-top: 18px;
   }
   .calc_popup_bg .calc_container form.osago_calc .calc_content .calc_sliders_container .content_slide .check_container .checkboxes .check {
+    position: relative;
     background-size: 30px 30px;
     padding-left: 45px;
     font-size: 18px;
